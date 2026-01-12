@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.visiteamap;
 
 import java.util.ArrayList;
@@ -69,7 +70,8 @@ public class VisiteAmapService
 		for (ModeleContratDate modeleContratDate : mcds) 
 		{
 			TypedQuery<ModeleContratProduit> q2 = em.createQuery("select c from ModeleContratProduit c WHERE c.modeleContrat=:mc AND "
-					+ " c NOT IN (select mce.produit from ModeleContratExclude mce where mce.date = :mcd) ",ModeleContratProduit.class);
+					+ " c NOT IN (select mce.produit from ModeleContratExclude mce where mce.date = :mcd) "
+					+ " ORDER BY c.indx",ModeleContratProduit.class);
 			q2.setParameter("mc", modeleContratDate.modeleContrat);
 			q2.setParameter("mcd", modeleContratDate);
 			
