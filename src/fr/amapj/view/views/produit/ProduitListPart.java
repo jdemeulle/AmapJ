@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.produit;
 
 import java.util.List;
@@ -101,7 +102,8 @@ public class ProduitListPart extends StandardListPart<ProduitDTO>
 	@Override
 	protected String[] getSortInfos() 
 	{
-		return new String[] { "nom" , "conditionnement" };
+//		return new String[] { "nom" , "conditionnement" };
+		return new String[] { "" , "" };
 	}
 	
 	protected String[] getSearchInfos()
@@ -120,7 +122,7 @@ public class ProduitListPart extends StandardListPart<ProduitDTO>
 	protected SuppressionPopup handleSupprimer()
 	{
 		ProduitDTO dto = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer le produit "+dto.nom+" , "+dto.conditionnement+" ?";
+		String text = "Etes vous sûr de vouloir supprimer le produit "+dto.nom+", "+dto.conditionnement+" ?";
 		return new SuppressionPopup(text,dto.id,e->new ProduitService().deleteProduit(e));
 	}
 	
