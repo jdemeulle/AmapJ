@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.login;
 
 import com.ejt.vaadin.loginform.LoginForm;
@@ -78,7 +79,7 @@ public class LoginPart
 		loginLayout.setComponentAlignment(myLoginForm, Alignment.MIDDLE_CENTER);
 		loginLayout.setExpandRatio(myLoginForm, 10);
 		
-		Label l1 = new Label("Application fonctionnant avec AmapJ - ");
+		Label l1 = new Label("Application fonctionnant avec AmapJ V045a - ");
 		Link link = new Link("Plus d'infos", new ExternalResource("https://amapj.fr"));
 		link.setTargetName("_blank");
 		
