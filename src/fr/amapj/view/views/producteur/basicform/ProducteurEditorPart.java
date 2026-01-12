@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.producteur.basicform;
 
 import java.util.List;
@@ -200,7 +201,8 @@ public class ProducteurEditorPart extends WizardFormPopup
 				UtilisateurDTO dto = new UtilisateurService().loadUtilisateurDto(lig.idUtilisateur);
 				if (UtilisateurUtil.canSendMailTo(dto.email)==false)
 				{
-					return "L'utilisateur "+dto.nom+" "+dto.prenom+" n'a pas d'adresse e mail. Vous ne pouvez donc pas le notifier."; 
+//					return "L'utilisateur "+dto.nom+" "+dto.prenom+" n'a pas d'adresse e mail. Vous ne pouvez donc pas le notifier."; 
+					return null;
 				}
 			}
 		}
