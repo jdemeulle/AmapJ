@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.produit;
 
 import java.util.List;
@@ -58,7 +59,8 @@ public class ProduitService
 	public List<ProduitDTO> getAllProduitDTO(Long idProducteur)
 	{
 		RdbLink em = RdbLink.get();
-		em.createQuery("select p from Produit p where p.producteur.id=:prd order by p.nom,p.conditionnement");
+//		em.createQuery("select p from Produit p where p.producteur.id=:prd order by p.nom,p.conditionnement");
+		em.createQuery("select p from Produit p where p.producteur.id=:prd");
 		em.setParameter("prd", idProducteur);
 		return em.result().listConverted(Produit.class,e->createProduitDto(e, em,false));
 		
