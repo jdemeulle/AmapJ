@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.feuilledistribution.producteur;
 
 import java.io.IOException;
@@ -152,7 +153,7 @@ public class EGFeuilleDistributionProducteur extends AbstractExcelGenerator
 		grilleTool.performSheet(et,firstLine,sheetName,mc,prods,ds,utilisateurs,nbColGauche,contrats);
 		
 		// Suppression de la colonne avec les prix 
-		et.setColHidden(2, true);
+//		et.setColHidden(2, true);
 		
 		// Ajustement pour tenir sur une seule page
 		et.adjustSheetForOnePage();
@@ -183,16 +184,18 @@ public class EGFeuilleDistributionProducteur extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+		
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
 		if (modeleContratDateId==null)
 		{
-			return "distri-"+mc.nom;
+			return "distri-"+param.nomAmap+"-"+mc.nom;
 		}
 		else
 		{
 			ModeleContratDate date = em.find(ModeleContratDate.class, modeleContratDateId);
 			SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-			return "distri-"+mc.nom+"-"+df.format(date.dateLiv);
+			return "distri-"+param.nomAmap+"-"+mc.nom+"-"+df.format(date.dateLiv);
 		}
 	}
 
