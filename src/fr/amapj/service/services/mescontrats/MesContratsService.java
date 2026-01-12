@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.mescontrats;
 
 import java.text.SimpleDateFormat;
@@ -759,7 +760,7 @@ public class MesContratsService
 		// L'utilisateur n'a pas adhéré
 		if (nb==0)
 		{
-			return "Vous devez être cotisant sur la période "+periodeCotisation.nom+" pour pouvoir vous inscrire sur ce contrat.<br/><br/>Pour cela, merci d'aller à la page \"Mes adhésions\"";
+			return "Vous devez être cotisant sur la période "+periodeCotisation.nom+" pour pouvoir vous inscrire sur ce contrat. Pour cela, merci d'aller à la page \"Mes adhésions\"";
 		}
 		else
 		{
