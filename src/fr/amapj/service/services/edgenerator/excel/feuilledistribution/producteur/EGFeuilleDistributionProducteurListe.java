@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.feuilledistribution.producteur;
 
 import java.text.SimpleDateFormat;
@@ -36,7 +37,8 @@ import fr.amapj.model.models.contrat.reel.ContratCell;
 import fr.amapj.model.models.fichierbase.Produit;
 import fr.amapj.model.models.fichierbase.Utilisateur;
 import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation des feuilles de livraison en mode liste (et non en mode grille)
@@ -60,6 +62,8 @@ public class EGFeuilleDistributionProducteurListe
 		SimpleDateFormat df = new SimpleDateFormat("dd MMMMM yyyy");
 		SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		SimpleDateFormat df2 = new SimpleDateFormat("dd MMMMM");
+
+		ParametresDTO param = new ParametresService().getParametres();
 		
 		ModeleContratDate mcd = em.find(ModeleContratDate.class, modeleContratDateId);
 		ModeleContrat mc = mcd.modeleContrat;
@@ -69,7 +73,7 @@ public class EGFeuilleDistributionProducteurListe
 		et.addSheet(sheetName, 1, 100);
 				
 		// Ligne 1 à 5
-		et.addRow("FEUILLE DE DISTRIBUTION PRODUCTEUR DU "+df.format(mcd.dateLiv),et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Feuille de distribution producteur du "+df.format(mcd.dateLiv),et.grasGaucheNonWrappe);
 		et.addRow(mc.nom,et.grasGaucheNonWrappe);
 		et.addRow(mc.description,et.grasGaucheNonWrappe);
 		et.addRow("Extrait le "+df1.format(DateUtils.getDate()),et.grasGaucheNonWrappe);
@@ -89,7 +93,7 @@ public class EGFeuilleDistributionProducteurListe
 
 	private void addCumul(RdbLink em, ExcelGeneratorTool et)
 	{
-		et.addRow("CUMUL DES QUANTITES A LIVRER",et.grasCentreBordureColor);
+		et.addRow("CUMUL DES QUANTITÉS À LIVRER",et.grasCentreBordureColor);
 		et.addRow("",et.grasGaucheNonWrappe);
 		
 		ModeleContratDate mcd = em.find(ModeleContratDate.class, modeleContratDateId);
@@ -109,7 +113,7 @@ public class EGFeuilleDistributionProducteurListe
 			int qte = SQLUtils.toInt(line[1]);
 			
 			Produit p = mcp.produit;
-			et.addRow("  "+BULLET_CHARACTER+" "+qte+" "+p.nom+" ,"+p.conditionnement,et.nongrasGaucheWrappe);
+			et.addRow("  "+BULLET_CHARACTER+" "+qte+" "+p.nom+", "+p.conditionnement,et.nongrasGaucheWrappe);
 		}
 		
 		
@@ -118,7 +122,7 @@ public class EGFeuilleDistributionProducteurListe
 	private void addDetailAmapien(RdbLink em, ExcelGeneratorTool et)
 	{
 		et.addRow("",et.grasGaucheNonWrappe);
-		et.addRow("DETAIL PAR AMAPIEN",et.grasCentreBordureColor);
+		et.addRow("DÉTAIL PAR AMAPIEN",et.grasCentreBordureColor);
 		
 		Long user = 0L;
 				
@@ -142,7 +146,7 @@ public class EGFeuilleDistributionProducteurListe
 				et.addRow("",et.grasGaucheNonWrappe);
 				et.addRow(u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
 			}
-			et.addRow("  "+BULLET_CHARACTER+" "+qte+" "+p.nom+" ,"+p.conditionnement,et.nongrasGaucheWrappe);
+			et.addRow("  "+BULLET_CHARACTER+" "+qte+" "+p.nom+", "+p.conditionnement,et.nongrasGaucheWrappe);
 		}	
 		
 	}
