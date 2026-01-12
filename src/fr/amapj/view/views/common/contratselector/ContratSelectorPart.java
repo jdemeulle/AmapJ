@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.common.contratselector;
 
 import java.util.List;
@@ -102,7 +103,8 @@ public class ContratSelectorPart
 		contratBox.addValueChangeListener(e->handleContratChange());
 			
 
-		reinitButton = new Button("Changer de contrat");
+//		reinitButton = new Button("Changer de contrat");
+		reinitButton = new Button("Changer de producteur");
 		reinitButton.addClickListener(e->handleReinit());
 			
 
