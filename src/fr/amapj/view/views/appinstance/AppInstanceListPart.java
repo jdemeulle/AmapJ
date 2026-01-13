@@ -113,7 +113,7 @@ public class AppInstanceListPart extends StandardListPart<AppInstanceDTO>
 		popup.addLine("Extraire les mails de tous les administrateurs + tresoriers + stats", ()->new CopyPopup("Mails admin + stats", ()->new AppInstanceService().getStatInfo()));
 		popup.addLine("Extraire les schémas de toutes les bases", ()->new CopyPopup("Schemas des bases", ()->new AppInstanceService().getSchemaAllBases(false)));
 		popup.addLine("Extraire la taille de toutes les bases", ()->new CopyPopup("Taille des bases", ()->new AppInstanceService().getSchemaAllBases(true)));
-		popup.addLine("Vérifier la cohérence des modeles de contrats", ()->new PopupCheckCoherenceModeleContrat(getSelectedLines()));
+		popup.addLine("Vérifier la cohérence des modèles de contrats", ()->new PopupCheckCoherenceModeleContrat(getSelectedLines()));
 		// popup.addLine("Charger une sauvegarde", ()->new PopupLoadBackup());
 		popup.addLine("Paramétrer le mail d'envoi des backups", ()->new PopupSaisieMailBackup());
 			
@@ -176,3 +176,4 @@ public class AppInstanceListPart extends StandardListPart<AppInstanceDTO>
 
 	
 }
+
