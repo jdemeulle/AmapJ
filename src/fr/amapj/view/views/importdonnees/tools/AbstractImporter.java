@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.importdonnees.tools;
 
 import java.io.ByteArrayInputStream;
@@ -213,7 +214,7 @@ abstract public class AbstractImporter<T extends TableItem> implements Receiver 
 			{
 				errorMessage.add("Il y a une erreur sur la ligne 3 du fichier à importer.");
 				errorMessage.add("La colonne "+(i+1)+" doit contenir l'entête \""+entete+"\"");
-				errorMessage.add("Etes vous sûr d'avoir pris le bon fichier exemple ? ");
+				errorMessage.add("Êtes-vous sûr d'avoir pris le bon fichier exemple ? ");
 				return;
 			}
 		}
