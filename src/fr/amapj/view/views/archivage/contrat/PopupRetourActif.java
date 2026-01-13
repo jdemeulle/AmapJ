@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.contrat;
 
 import com.vaadin.ui.OptionGroup;
@@ -72,7 +73,7 @@ public class PopupRetourActif extends WizardFormPopup
 	
 	private void addConfirmation()
 	{
-		String str = "Etes vous sur de vouloir sortir ce contrat des archives et de le placer à l'état ACTIF ?";
+		String str = "Êtes-vous sûr de vouloir sortir ce contrat des archives et de le placer à l'état ACTIF ?";
 		
 		addHtml(str);
 	}
