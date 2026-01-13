@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.producteur;
 
 import java.io.IOException;
@@ -112,7 +113,7 @@ public class EGPaiementProducteur extends AbstractExcelGenerator
 		et.setCell(1,"Date réelle de remise",et.grasCentreBordure);
 		et.setCell(2,"Montant" ,et.grasCentreBordure);
 		et.setCell(3,"Nb de chèques" ,et.grasCentreBordure);
-		et.setCell(4,"Etat de la remise" ,et.grasCentreBordure);
+		et.setCell(4,"État de la remise" ,et.grasCentreBordure);
 		
 		// Une ligne pour les avoirs
 		addRowAvoir(et,mntAvoir);
