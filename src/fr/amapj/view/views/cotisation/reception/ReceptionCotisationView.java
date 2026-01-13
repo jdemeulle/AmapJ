@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.cotisation.reception;
 
 import java.util.List;
@@ -119,7 +120,7 @@ public class ReceptionCotisationView extends StandardListPart<PeriodeCotisationU
 	
 	private CorePopup handleSupprimer(PeriodeCotisationUtilisateurDTO dto)
 	{
-		String text = "Etes vous sûr de vouloir supprimer l'adhésion de "+dto.nomUtilisateur+" "+dto.prenomUtilisateur+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer l'adhésion de "+dto.nomUtilisateur+" "+dto.prenomUtilisateur+" ?";
 		SuppressionPopup confirmPopup = new SuppressionPopup(text,dto.id,e->new MesAdhesionsService().deleteAdhesion(e,true));
 		return confirmPopup;
 	}
