@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.producteur;
 
 import java.util.List;
@@ -65,7 +66,7 @@ public class ArchivageProducteurListPart extends StandardListPart<ProducteurDTO>
 	{
 		addColumn("nom","Nom");
 		addColumn("utilisateurInfo","Producteurs");
-		addColumn("referentInfo","Referents");
+		addColumn("referentInfo","Référents");
 		
 		addColumn("nbModeleContratActif","Nb contrats").center();
 		addColumnDate("dateDerniereLivraison","Dernière liv");
