@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.amapien;
 
 import java.text.SimpleDateFormat;
@@ -172,7 +173,7 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 		et.setCell(3, "Date de l'adhesion", et.grasCentreBordure);
 		et.setCell(4, "Montant de l'adhesion", et.grasCentreBordure);
 		et.setCell(5, "Réception paiement", et.grasCentreBordure);
-		et.setCell(6, "Etat du paiement", et.grasCentreBordure);
+		et.setCell(6, "État du paiement", et.grasCentreBordure);
 		et.setCell(7, "Type du paiement", et.grasCentreBordure);
 		
 		for (PeriodeCotisationUtilisateurDTO p : ps) 
