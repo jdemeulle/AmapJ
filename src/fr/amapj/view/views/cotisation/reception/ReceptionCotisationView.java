@@ -88,7 +88,7 @@ public class ReceptionCotisationView extends StandardListPart<PeriodeCotisationU
 		addColumnDate("dateAdhesion","Date de l'adhésion");
 		addColumnDate("dateReceptionCheque","Date réception chéque");
 		addColumnCurrency("montantAdhesion","Montant adhésion (en €)").right();
-		addColumn("etatPaiementAdhesion","Etat du paiement");
+		addColumn("etatPaiementAdhesion","État du paiement");
 		addColumn("typePaiementAdhesion","Type de paiement");
 	}
 
@@ -145,3 +145,4 @@ public class ReceptionCotisationView extends StandardListPart<PeriodeCotisationU
 		return popup;
 	}
 }
+
