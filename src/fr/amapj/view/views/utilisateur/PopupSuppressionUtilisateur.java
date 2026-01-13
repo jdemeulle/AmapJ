@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.utilisateur;
 
 import com.vaadin.data.util.BeanItem;
@@ -57,7 +58,7 @@ public class PopupSuppressionUtilisateur extends FormPopup
 	
 	protected void addFields()
 	{
-		addText("Etes vous sûr de vouloir supprimer l' utilisateur "+utilisateurDTO.nom+" "+utilisateurDTO.prenom+" ?");
+		addText("Êtes-vous sûr de vouloir supprimer l' utilisateur "+utilisateurDTO.nom+" "+utilisateurDTO.prenom+" ?");
 	}
 
 	protected void performSauvegarder()
