@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.editionspe;
 
 import java.util.List;
@@ -130,7 +131,7 @@ public class EditionSpeListPart extends StandardListPart<EditionSpeDTO>
 	protected SuppressionPopup handleSupprimer()
 	{
 		EditionSpeDTO dto = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer l'édition spécifique "+dto.nom+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer l'édition spécifique "+dto.nom+" ?";
 		return new SuppressionPopup(text,dto.id,e->new EditionSpeService().delete(e));	
 	}
 }
