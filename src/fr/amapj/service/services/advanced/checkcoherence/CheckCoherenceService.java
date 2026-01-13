@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.advanced.checkcoherence;
 
 import java.util.List;
@@ -105,8 +106,8 @@ public class CheckCoherenceService
 		{
 				msg = "===================================================================\n" +
 					"Mails=" + getMailsAdmin(em)+ "," + getMailsTresorier(em) + "\n\n" + 
-					"Il y a une incohérence pour le modele de contrat :"
-					+ mc.nom + "\n" + "Producteur=" + mc.producteur.nom + "\n" + "Etat=" + mc.etat + "\n"
+					"Il y a une incohérence pour le modèle de contrat :"
+					+ mc.nom + "\n" + "Producteur=" + mc.producteur.nom + "\n" + "État=" + mc.etat + "\n"
 					+ "Détails : \n" + msg;
 
 			msg(buf, msg);
