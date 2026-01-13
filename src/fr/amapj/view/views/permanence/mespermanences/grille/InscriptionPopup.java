@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.permanence.mespermanences.grille;
 
 import java.util.ArrayList;
@@ -99,7 +100,7 @@ public class InscriptionPopup extends OKCancelPopup
 		
 		if (roleIds.size()==1)
 		{
-			Label l = new Label("Etes vous sûr de vouloir vous inscrire pour la date du "+FormatUtils.getFullDate().format(date.datePerm)+" ? ");
+			Label l = new Label("Êtes-vous sûr de vouloir vous inscrire pour la date du "+FormatUtils.getFullDate().format(date.datePerm)+" ? ");
 			contentLayout.addComponent(l);
 			selectedRole = roleIds.get(0);
 			return;
