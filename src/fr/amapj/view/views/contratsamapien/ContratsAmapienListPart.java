@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.contratsamapien;
 
 import java.util.List;
@@ -158,7 +159,7 @@ public class ContratsAmapienListPart extends StandardListPart<AmapienContratDTO>
 	{
 		AmapienContratDTO dto = getSelectedLine();
 		
-		String text = "Etes vous sûr de vouloir supprimer le contrat de "+dto.prenomUtilisateur+" "+dto.nomUtilisateur+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer le contrat de "+dto.prenomUtilisateur+" "+dto.nomUtilisateur+" ?";
 		return new SuppressionPopup(text,dto.idContrat,e->new MesContratsService().deleteContrat(e));			
 	}
 	
