@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.logview;
 
 import java.text.SimpleDateFormat;
@@ -77,7 +78,7 @@ public class LogView extends StandardListPart<LogAccessDTO>
 		infos.setWidth("80%");
 		updateLabelInfo();
 		
-		Button b = new Button("Parametres");
+		Button b = new Button("Paramètres");
 		b.addClickListener(e->handleParametres());
 		
 		HorizontalLayout hl = new HorizontalLayout();
@@ -101,7 +102,7 @@ public class LogView extends StandardListPart<LogAccessDTO>
 		
 		if (logViewDTO.status!=null)
 		{
-			str = str +" Etat="+logViewDTO.status;
+			str = str +" État="+logViewDTO.status;
 		}
 		
 		if (logViewDTO.typLog!=null)
@@ -154,7 +155,7 @@ public class LogView extends StandardListPart<LogAccessDTO>
 		addColumn("nom","Nom");
 		addColumn("prenom","Prénom");
 		addColumn("dbName","Base");
-		addColumn("status","Etat");
+		addColumn("status","État");
 		addColumn("typLog","Type");
 		addColumn("ip","Ip");
 		addColumn("browser","Browser");
