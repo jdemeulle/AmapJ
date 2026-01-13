@@ -66,7 +66,7 @@ public class DroitsAdministrateurListPart extends StandardListPart<AdminTresorie
 	protected void drawTable() 
 	{
 		addColumn("nom","Nom");
-		addColumn("prenom","Prenom");	
+		addColumn("prenom","Prénom");	
 	}
 
 
@@ -97,3 +97,4 @@ public class DroitsAdministrateurListPart extends StandardListPart<AdminTresorie
 		return new SuppressionPopup(text,dto.id,e->new AccessManagementService().deleteAdmin(e));		
 	}
 }
+
