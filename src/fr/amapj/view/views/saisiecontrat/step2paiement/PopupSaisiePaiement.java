@@ -85,7 +85,7 @@ public class PopupSaisiePaiement extends PopupCurrencyVector
 		line1.addCell("Montant €");
 		if (param.hasColComment)
 		{
-			line1.addCell("Etat");
+			line1.addCell("État");
 		}
 		
 		param.headerLines.add(line1);
@@ -302,3 +302,4 @@ public class PopupSaisiePaiement extends PopupCurrencyVector
 	}
 	
 }
+
