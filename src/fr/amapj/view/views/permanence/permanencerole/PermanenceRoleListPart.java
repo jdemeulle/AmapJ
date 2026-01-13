@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.permanence.permanencerole;
 
 import java.util.List;
@@ -100,7 +101,7 @@ public class PermanenceRoleListPart extends StandardListPart<PermanenceRoleDTO>
 			return new MessagePopup("Impossible",ColorStyle.RED,str);
 		}
 				
-		String text = "Etes vous sûr de vouloir supprimer le rôle "+dto.nom+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer le rôle "+dto.nom+" ?";
 		return new SuppressionPopup(text,dto.id,e->new PermanenceRoleService().delete(e));
 		
 	}
