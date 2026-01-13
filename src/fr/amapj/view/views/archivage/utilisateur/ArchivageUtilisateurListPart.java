@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.utilisateur;
 
 import java.util.List;
@@ -75,9 +76,9 @@ public class ArchivageUtilisateurListPart extends StandardListPart<UtilisateurDT
 	protected void drawTable() 
 	{
 		addColumn("nom","Nom");
-		addColumn("prenom","Prenom");
-		addColumn("roles","Role");
-		addColumn("etatUtilisateur","Etat");
+		addColumn("prenom","Prénom");
+		addColumn("roles","Rôle");
+		addColumn("etatUtilisateur","État");
 		addColumnDate("dateCreation","Date création");
 	}
 
