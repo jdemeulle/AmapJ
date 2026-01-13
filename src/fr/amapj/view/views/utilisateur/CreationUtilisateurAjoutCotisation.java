@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.utilisateur;
 
 import com.vaadin.data.util.BeanItem;
@@ -79,7 +80,7 @@ public class CreationUtilisateurAjoutCotisation extends WizardFormPopup
 		addCurrencyField("Montant", "montantAdhesion",false);
 
 		//
-		addComboEnumField("Etat du paiement", "etatPaiementAdhesion",notNull);
+		addComboEnumField("État du paiement", "etatPaiementAdhesion",notNull);
 		
 		//
 		addComboEnumField("Type du paiement", "typePaiementAdhesion",notNull);
