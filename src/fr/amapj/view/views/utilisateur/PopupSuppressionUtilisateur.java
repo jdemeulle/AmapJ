@@ -78,7 +78,8 @@ public class PopupSuppressionUtilisateur extends FormPopup
 		}
 		catch(Exception e)
 		{
-			ErrorPopup.open("Impossible de supprimer cet element.",e);
+			ErrorPopup.open("Impossible de supprimer cet élément.",e);
 		}
 	}
 }
+
