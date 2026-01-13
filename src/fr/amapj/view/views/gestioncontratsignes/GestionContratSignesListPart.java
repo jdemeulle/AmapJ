@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.gestioncontratsignes;
 
 import java.util.List;
@@ -211,7 +212,7 @@ public class GestionContratSignesListPart extends StandardListPart<ContratSigneD
 	private void handleSupprimer()
 	{
 		ContratSigneDTO contratSigneDTO = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer le contrat de "+contratSigneDTO.prenomUtilisateur+" "+contratSigneDTO.nomUtilisateur+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer le contrat de "+contratSigneDTO.prenomUtilisateur+" "+contratSigneDTO.nomUtilisateur+" ?";
 		SuppressionPopup confirmPopup = new SuppressionPopup(text,contratSigneDTO.idContrat,e->new MesContratsService().deleteContrat(e));
 		confirmPopup.open(this);		
 	}
