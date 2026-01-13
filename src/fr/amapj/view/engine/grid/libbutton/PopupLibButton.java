@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.engine.grid.libbutton;
 
 import java.util.HashMap;
@@ -274,7 +275,7 @@ abstract public class PopupLibButton<T> extends CorePopup
 
 	private void handleCopyWithConfirm() 
 	{
-		CorePopup popup = new OKCancelMessagePopup("Copier ...","Etes vous sur de vouloir copier le contenu du panier de la première date sur toutes les dates ? ", ()->param.copyFirstLineAction.run());
+		CorePopup popup = new OKCancelMessagePopup("Copier ...","Êtes-vous sûr de vouloir copier le contenu du panier de la première date sur toutes les dates ? ", ()->param.copyFirstLineAction.run());
 		popup.open();
 	}
 
