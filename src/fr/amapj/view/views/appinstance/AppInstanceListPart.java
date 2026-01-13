@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.appinstance;
 
 import java.util.List;
@@ -58,10 +59,10 @@ public class AppInstanceListPart extends StandardListPart<AppInstanceDTO>
 	protected void drawButton() 
 	{
 		addButton("Créer une nouvelle instance", ButtonType.ALWAYS, e->new AppInstanceEditorPart());
-		addButton("Etat courant", ButtonType.EDIT_MODE, e->handleStart());
-		addButton("Etat au démarrage", ButtonType.EDIT_MODE, e->handleStateOnStart());
+		addButton("État courant", ButtonType.EDIT_MODE, e->handleStart());
+		addButton("État au démarrage", ButtonType.EDIT_MODE, e->handleStateOnStart());
 		addButton("Se connecter", ButtonType.EDIT_MODE, e->handleConnect());
-		addButton("Requete SQL", ButtonType.EDIT_MODE, e->handleSql());
+		addButton("Requête SQL", ButtonType.EDIT_MODE, e->handleSql());
 		addButton("Sauvegarder", ButtonType.EDIT_MODE, e->handleSave());
 		addButton("Supprimer", ButtonType.EDIT_MODE, e->handleSupprimer());
 		addButton("PATCH V042", ButtonType.ALWAYS, e->new PatchEditorPart());
@@ -77,8 +78,8 @@ public class AppInstanceListPart extends StandardListPart<AppInstanceDTO>
 	{
 		addColumn("nomInstance","Nom");
 		addColumnDateTime("dateCreation","Date de création");
-		addColumn("state","Etat courant");
-		addColumn("stateOnStart","Etat démarrage");
+		addColumn("state","État courant");
+		addColumn("stateOnStart","État démarrage");
 		addColumn("nbUtilisateurs","Nb utilisateurs");
 		addColumn("nbMails","Mails envoyés");
 	}
@@ -110,9 +111,9 @@ public class AppInstanceListPart extends StandardListPart<AppInstanceDTO>
 			
 		popup.addLine("Extraire les mails de tous les administrateurs", ()->new CopyPopup("Mails des administrateurs", ()->new AppInstanceService().getAllMails()));
 		popup.addLine("Extraire les mails de tous les administrateurs + tresoriers + stats", ()->new CopyPopup("Mails admin + stats", ()->new AppInstanceService().getStatInfo()));
-		popup.addLine("Extraire les schemas de toutes les bases", ()->new CopyPopup("Schemas des bases", ()->new AppInstanceService().getSchemaAllBases(false)));
+		popup.addLine("Extraire les schémas de toutes les bases", ()->new CopyPopup("Schemas des bases", ()->new AppInstanceService().getSchemaAllBases(false)));
 		popup.addLine("Extraire la taille de toutes les bases", ()->new CopyPopup("Taille des bases", ()->new AppInstanceService().getSchemaAllBases(true)));
-		popup.addLine("Verifier la cohérence des modeles de contrats", ()->new PopupCheckCoherenceModeleContrat(getSelectedLines()));
+		popup.addLine("Vérifier la cohérence des modeles de contrats", ()->new PopupCheckCoherenceModeleContrat(getSelectedLines()));
 		// popup.addLine("Charger une sauvegarde", ()->new PopupLoadBackup());
 		popup.addLine("Paramétrer le mail d'envoi des backups", ()->new PopupSaisieMailBackup());
 			
@@ -141,7 +142,7 @@ public class AppInstanceListPart extends StandardListPart<AppInstanceDTO>
 		}
 		else
 		{
-			return new MessagePopup("Notification", ColorStyle.RED, "Vous devez selectionner une et une seule instance");
+			return new MessagePopup("Notification", ColorStyle.RED, "Vous devez sélectionner une et une seule instance");
 		}
 		
 	}
@@ -165,11 +166,11 @@ public class AppInstanceListPart extends StandardListPart<AppInstanceDTO>
 		List<AppInstanceDTO> dtos = getSelectedLines();
 		if (dtos.size()!=1)
 		{
-			return new MessagePopup("Notification", ColorStyle.RED, "Vous devez selectionner une et une seule instance");
+			return new MessagePopup("Notification", ColorStyle.RED, "Vous devez sélectionner une et une seule instance");
 		}
 		
 		AppInstanceDTO dto = dtos.get(0);
-		String text = "Etes vous sûr de vouloir supprimer l'instance "+dto.nomInstance+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer l'instance "+dto.nomInstance+" ?";
 		return new SuppressionPopup(text,dto.id,e->new AppInstanceService().delete(e));	
 	}
 
