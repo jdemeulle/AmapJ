@@ -66,7 +66,7 @@ public class DroitsTresorierListPart extends StandardListPart<AdminTresorierDTO>
 	protected void drawTable() 
 	{
 		addColumn("nom","Nom");
-		addColumn("prenom","Prenom");
+		addColumn("prenom","Prénom");
 		
 	}
 
@@ -97,3 +97,4 @@ public class DroitsTresorierListPart extends StandardListPart<AdminTresorierDTO>
 		return new SuppressionPopup(text,dto.id,e->new AccessManagementService().deleteTresorier(e));			
 	}
 }
+
