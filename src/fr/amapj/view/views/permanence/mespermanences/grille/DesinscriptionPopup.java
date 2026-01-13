@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.permanence.mespermanences.grille;
 
 import com.vaadin.ui.Label;
@@ -53,7 +54,7 @@ public class DesinscriptionPopup extends OKCancelPopup
 	@Override
 	protected void createContent(VerticalLayout contentLayout)
 	{
-		Label l = new Label("Etes vous sûr de vouloir vous désinscrire pour la date du "+FormatUtils.getFullDate().format(date.datePerm)+" ? ");
+		Label l = new Label("Êtes-vous sûr de vouloir vous désinscrire pour la date du "+FormatUtils.getFullDate().format(date.datePerm)+" ? ");
 		contentLayout.addComponent(l);
 		
 		
