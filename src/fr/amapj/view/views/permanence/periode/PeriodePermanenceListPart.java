@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.permanence.periode;
 
 import java.util.List;
@@ -81,7 +82,7 @@ public class PeriodePermanenceListPart extends StandardListPart<SmallPeriodePerm
 	@Override
 	protected void drawTable() 
 	{
-		addColumn("etat","Etat");
+		addColumn("etat","État");
 		addColumn("nom","Nom de la période");
 		addColumnDate("dateDebut","Date de début");
 		addColumnDate("dateFin","Date de fin");
@@ -136,7 +137,7 @@ public class PeriodePermanenceListPart extends StandardListPart<SmallPeriodePerm
 	protected SuppressionPopup handleSupprimer()
 	{
 		SmallPeriodePermanenceDTO dto = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer la période de permanence "+dto.nom+" ?";
+		String text = "Êtes vous sûr de vouloir supprimer la période de permanence "+dto.nom+" ?";
 		return new SuppressionPopup(text,dto.id,e->new PeriodePermanenceService().deletePeriodePermanence(e));	
 	}
 }
