@@ -73,7 +73,7 @@ public class ProduitListPart extends StandardListPart<ProduitDTO>
 		addButton("Modifier", ButtonType.EDIT_MODE, e->new ProduitEditorPart(false,e.id,null));
 		addButton("Supprimer", ButtonType.EDIT_MODE, e->handleSupprimer());
 		addButton("Description", ButtonType.EDIT_MODE, e->handleDescription(e));
-		addButton("Telecharger", ButtonType.ALWAYS, e->handleTelecharger(e));
+		addButton("Télécharger", ButtonType.ALWAYS, e->handleTelecharger(e));
 
 		addSearchField("Rechercher par nom ou conditionnement");
 	}
@@ -122,7 +122,7 @@ public class ProduitListPart extends StandardListPart<ProduitDTO>
 	protected SuppressionPopup handleSupprimer()
 	{
 		ProduitDTO dto = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer le produit "+dto.nom+", "+dto.conditionnement+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer le produit "+dto.nom+", "+dto.conditionnement+" ?";
 		return new SuppressionPopup(text,dto.id,e->new ProduitService().deleteProduit(e));
 	}
 	
@@ -144,3 +144,4 @@ public class ProduitListPart extends StandardListPart<ProduitDTO>
 
 	
 }
+
