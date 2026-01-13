@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.cotisation.reception;
 
 import fr.amapj.service.services.gestioncotisation.GestionCotisationService;
@@ -69,7 +70,7 @@ public class PopupModifCotisation extends WizardFormPopup
 		addCurrencyField("Montant", "montantAdhesion",false);
 
 		//
-		addComboEnumField("Etat du paiement", "etatPaiementAdhesion",notNull);
+		addComboEnumField("État du paiement", "etatPaiementAdhesion",notNull);
 		
 		//
 		addComboEnumField("Type du paiement", "typePaiementAdhesion",notNull);
