@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.mescontrats;
 
 import com.vaadin.ui.Alignment;
@@ -293,7 +294,7 @@ public class InscriptionButtonModule
 
 	private void handleSupprimer(SmallContratDTO c)
 	{
-		String text = "Etes vous sûr de vouloir supprimer le contrat de "+c.nom+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer le contrat de "+c.nom+" ?";
 		SuppressionPopup confirmPopup = new SuppressionPopup(text,c.contratId,e->new MesContratsService().deleteContrat(e));
 		confirmPopup.open(view);		
 	}
