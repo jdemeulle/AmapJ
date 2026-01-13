@@ -100,7 +100,8 @@ public class ProducteurListPart extends StandardListPart<ProducteurDTO>
 	private SuppressionPopup handleSupprimer()
 	{
 		ProducteurDTO dto = getSelectedLine();
-		String text = "Êtes vous sûr de vouloir supprimer le producteur "+dto.nom+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer le producteur "+dto.nom+" ?";
 		return new SuppressionPopup(text,dto.id,e->new ProducteurService().delete(e));
 	}
 }
+
