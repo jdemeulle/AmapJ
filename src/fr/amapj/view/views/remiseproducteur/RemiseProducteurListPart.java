@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.remiseproducteur;
 
 import java.text.SimpleDateFormat;
@@ -140,7 +141,7 @@ public class RemiseProducteurListPart extends StandardListPart<RemiseDTO>
 	private CorePopup handleSupprimer()
 	{
 		RemiseDTO remiseDTO = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer la remise du "+remiseDTO.moisRemise+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer la remise du "+remiseDTO.moisRemise+" ?";
 		return new SuppressionPopup(text,remiseDTO.id,true,e->new RemiseProducteurService().deleteRemise(e));
 	}
 
