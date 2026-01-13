@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.utilisateur;
 
 import java.util.List;
@@ -81,9 +82,9 @@ public class UtilisateurListPart extends StandardListPart<UtilisateurDTO>
 	protected void drawTable() 
 	{	
 		addColumn("nom","Nom");
-		addColumn("prenom","Prenom");
-		addColumn("roles","Role");
-		addColumn("etatUtilisateur","Etat");
+		addColumn("prenom","Prénom");
+		addColumn("roles","Rôle");
+		addColumn("etatUtilisateur","État");
 		addColumnDateTime("dateCreation","Date création");	
 	}
 
