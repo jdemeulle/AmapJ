@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.utilisateur;
 
 import com.vaadin.data.util.BeanItem;
@@ -120,7 +121,7 @@ public class PopupEnvoiPasswordMasse extends WizardFormPopup
 	private void addFieldAvertissement()
 	{
 		// Titre
-		setStepTitle("Etes vous sûr ? ");
+		setStepTitle("Êtes-vous sûr ? ");
 		
 		int count=0;
 		for (EnvoiMailUtilisateurDTO u : envoiMail.utilisateurs)
@@ -132,7 +133,7 @@ public class PopupEnvoiPasswordMasse extends WizardFormPopup
 		}
 		
 		String str = 	"Vous allez envoyer "+count+" mails.</br>"+
-						"Etes vous sûr de vouloir continuer ?<br/>"+
+						"Êtes-vous sûr de vouloir continuer ?<br/>"+
 						"Quand vous allez cliquer sur Etape suivante, les mails seront envoyés<br/>";
 				
 		
