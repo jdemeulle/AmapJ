@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.mesadhesions;
 
 import java.text.SimpleDateFormat;
@@ -244,7 +245,7 @@ public class MesAdhesionsView extends FrontOfficeView implements  PopupListener
 	
 	private void handleAdhesionSupprimer(AdhesionDTO adhesionDTO)
 	{
-		String text = "Etes vous sûr de vouloir supprimer votre adhésion ?";
+		String text = "Êtes-vous sûr de vouloir supprimer votre adhésion ?";
 		SuppressionPopup confirmPopup = new SuppressionPopup(text,adhesionDTO.idPeriodeUtilisateur,e->new MesAdhesionsService().deleteAdhesion(e,false));
 		confirmPopup.open(this);		
 	}
