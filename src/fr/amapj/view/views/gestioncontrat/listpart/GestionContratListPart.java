@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.gestioncontrat.listpart;
 
 import java.util.List;
@@ -92,7 +93,7 @@ public class GestionContratListPart extends StandardListPart<ModeleContratSummar
 	@Override
 	protected void drawTable() 
 	{
-		addColumn("etat","Etat");
+		addColumn("etat","État");
 		addColumn("nom","Nom");
 		addColumn("nomProducteur","Producteur");
 		addColumnDate("finInscription","Fin inscription");
@@ -154,7 +155,7 @@ public class GestionContratListPart extends StandardListPart<ModeleContratSummar
 	
 	private SuppressionPopup handleSupprimer(ModeleContratSummaryDTO mcDTO)
 	{
-		String text = "Etes vous sûr de vouloir supprimer le contrat vierge "+mcDTO.nom+" de "+mcDTO.nomProducteur+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer le contrat vierge "+mcDTO.nom+" de "+mcDTO.nomProducteur+" ?";
 		SuppressionPopup confirmPopup = new SuppressionPopup(text,mcDTO.id,e->new GestionContratService().deleteContrat(e));
 		return confirmPopup;	
 	}
