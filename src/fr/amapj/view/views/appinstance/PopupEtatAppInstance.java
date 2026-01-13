@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.appinstance;
 
 import java.util.List;
@@ -45,7 +46,7 @@ public class PopupEtatAppInstance extends FormPopup
 	 */
 	public PopupEtatAppInstance(List<AppInstanceDTO> dtos)
 	{
-		popupTitle = "Etat des instances";
+		popupTitle = "État des instances";
 		this.dtos = dtos;
 
 		setModel(state);
