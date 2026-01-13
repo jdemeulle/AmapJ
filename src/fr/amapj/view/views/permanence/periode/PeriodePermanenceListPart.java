@@ -137,7 +137,8 @@ public class PeriodePermanenceListPart extends StandardListPart<SmallPeriodePerm
 	protected SuppressionPopup handleSupprimer()
 	{
 		SmallPeriodePermanenceDTO dto = getSelectedLine();
-		String text = "Êtes vous sûr de vouloir supprimer la période de permanence "+dto.nom+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer la période de permanence "+dto.nom+" ?";
 		return new SuppressionPopup(text,dto.id,e->new PeriodePermanenceService().deletePeriodePermanence(e));	
 	}
 }
+
