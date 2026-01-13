@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.parametres;
 
 import java.util.function.Supplier;
@@ -99,39 +100,39 @@ public class ParametresView extends BackOfficeLongView
 		
 		addLabel("Amapien");
 		
-		addButton("Ecran \"Mes contrats\"",() -> new PEMesContratsEditorPart());
+		addButton("Écran \"Mes contrats\"",() -> new PEMesContratsEditorPart());
 
-		addButton("Ecran \"Mes livraisons\"",() -> new PEMesLivraisonsEditorPart());
+		addButton("Écran \"Mes livraisons\"",() -> new PEMesLivraisonsEditorPart());
 		
-		addButton("Ecran \"Mes adhésions\"",() -> new PEMesAdhesionsEditorPart());
+		addButton("Écran \"Mes adhésions\"",() -> new PEMesAdhesionsEditorPart());
 		
-		addButton("Ecran \"Découverte / Visite\"",() -> new PEVisiteAmapEditorPart());
+		addButton("Écran \"Découverte / Visite\"",() -> new PEVisiteAmapEditorPart());
 		
-		addButton("Ecran \"Producteurs / Référents\"",() -> new PEProducteurReferentEditorPart());
+		addButton("Écran \"Producteurs / Référents\"",() -> new PEProducteurReferentEditorPart());
 		
-		addButton("Ecran \"Liste des adhérents\"",() -> new PEListeAdherentEditorPart());
+		addButton("Écran \"Liste des adhérents\"",() -> new PEListeAdherentEditorPart());
 		
 		addLabel("Producteur");
 		
-		addButton("Ecran \"Livraison d'un producteur\"",() -> new PELivraisonProducteurEditorPart());
+		addButton("Écran \"Livraison d'un producteur\"",() -> new PELivraisonProducteurEditorPart());
 		
-		addButton("Ecran \"Contrats d'un producteur\"",() -> new PEContratProducteurEditorPart());
+		addButton("Écran \"Contrats d'un producteur\"",() -> new PEContratProducteurEditorPart());
 		
 		addLabel("Référent");
 		
-		addButton("Ecran \"Gestion des contrats vierges\"",() -> new PEGestionContratsViergesEditorPart());
+		addButton("Écran \"Gestion des contrats vierges\"",() -> new PEGestionContratsViergesEditorPart());
 		
-		addButton("Ecran \"Gestion des contrats signés\"",() -> new PEGestionContratsSignesEditorPart());
+		addButton("Écran \"Gestion des contrats signés\"",() -> new PEGestionContratsSignesEditorPart());
 		
-		addButton("Ecran \"Réception des chèques\"",() -> new PEReceptionChequeEditorPart());
+		addButton("Écran \"Réception des chèques\"",() -> new PEReceptionChequeEditorPart());
 		
-		addButton("Ecran \"Remise aux producteurs\"",() -> new PERemiseProducteurEditorPart());
+		addButton("Écran \"Remise aux producteurs\"",() -> new PERemiseProducteurEditorPart());
 		
-		addButton("Ecran \"Contrats d'un amapien\"",() -> new PEContratsAmapienEditorPart());
+		addButton("Écran \"Contrats d'un amapien\"",() -> new PEContratsAmapienEditorPart());
 		
-		addButton("Ecran \"Livraison d'un amapien\"",() -> new PELivraisonAmapienEditorPart());
+		addButton("Écran \"Livraison d'un amapien\"",() -> new PELivraisonAmapienEditorPart());
 
-		addButton("Ecran \"Synthèse multi contrats\"",() -> new PESyntheseMultiContratEditorPart());
+		addButton("Écran \"Synthèse multi contrats\"",() -> new PESyntheseMultiContratEditorPart());
 		
 		
 		addLabel("Autres");
