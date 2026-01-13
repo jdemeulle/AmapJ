@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.contrat;
 
 import java.util.List;
@@ -75,7 +76,7 @@ public class ArchivageContratListPart extends StandardListPart<ModeleContratSumm
 	@Override
 	protected void drawTable() 
 	{
-		addColumn("etat","Etat");
+		addColumn("etat","État");
 		addColumn("nom","Nom");
 		addColumn("nomProducteur","Producteur");
 		addColumnDate("finInscription","Fin inscription");
