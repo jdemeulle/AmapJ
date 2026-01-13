@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel;
 
 import java.io.IOException;
@@ -78,7 +79,7 @@ public class EGBilanAdhesion extends AbstractExcelGenerator
 		et.setCell(0,"Nom",et.grasCentreBordure);
 		et.setCell(1,"Prénom",et.grasCentreBordure);
 		et.setCell(2,"Montant",et.grasCentreBordure);
-		et.setCell(3,"Etat du paiement",et.grasCentreBordure);
+		et.setCell(3,"État du paiement",et.grasCentreBordure);
 		et.setCell(4,"Type du paiement",et.grasCentreBordure);
 		et.setCell(5,"Date de réception",et.grasCentreBordure);
 		et.setCell(6,"E mail",et.grasCentreBordure);
