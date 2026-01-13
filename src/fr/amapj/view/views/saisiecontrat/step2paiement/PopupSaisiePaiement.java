@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.saisiecontrat.step2paiement;
 
 import java.util.List;
@@ -201,8 +202,8 @@ public class PopupSaisiePaiement extends PopupCurrencyVector
 		}
 		switch (datePaiement.etatPaiement)
 		{
-		case A_FOURNIR: return "A fournir";
-		case AMAP: return "A l'AMAP";
+		case A_FOURNIR: return "À fournir";
+		case AMAP: return "À l'AMAP";
 		case PRODUCTEUR: return "Chez le producteur";
 			
 
