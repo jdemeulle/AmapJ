@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.producteur;
 
 import fr.amapj.model.models.fichierbase.EtatProducteur;
@@ -57,7 +58,7 @@ public class PopupProducteurRetourActif extends WizardFormPopup
 		
 		addHtml("Avec cet outil, vous allez pouvoir le replacer à l'état ACTIF, ce qui vous permettra de refaire des contrats avec ce producteur.");
 		
-		String str = "Etes vous sur de vouloir sortir ce producteur des archives et de le placer à l'état ACTIF ?";
+		String str = "Êtes-vous sur de vouloir sortir ce producteur des archives et de le placer à l'état ACTIF ?";
 		
 		addHtml(str);
 	}
