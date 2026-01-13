@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.visiteamap;
 
 import java.text.SimpleDateFormat;
@@ -255,22 +256,22 @@ public class VisiteAmapView extends FrontOfficeView
 		{
 			if (m.inscriptionDTO.isRetardataire)
 			{
-				return "Vous n'etes pas inscrit sur ce contrat mais vous pouvez vous inscrire en tant que nouvel arrivant / retardataire";
+				return "Vous n'êtes pas inscrit sur ce contrat mais vous pouvez vous inscrire en tant que nouvel arrivant / retardataire";
 			}
 			else
 			{
-				return "Vous n'etes pas inscrit sur ce contrat";
+				return "Vous n'êtes pas inscrit sur ce contrat";
 			}
 		}
 		
 		List<QteProdDTO> qteProdDTOs = contrat.qteProdDTOs;
 		if (qteProdDTOs.size()==0)
 		{
-			return "Vous etes inscrit sur ce contrat mais vous n'avez rien pris ce jour là.";
+			return "Vous êtes inscrit sur ce contrat mais vous n'avez rien pris ce jour là.";
 		}
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append("Vous etes inscrit sur ce contrat. Vous avez pris :<ul>");
+		sb.append("Vous êtes inscrit sur ce contrat. Vous avez pris :<ul>");
 		for (QteProdDTO lig : qteProdDTOs) 
 		{
 			sb.append("<li>"+lig.qte+" "+s(lig.nomProduit)+", "+s(lig.conditionnementProduit)+"</li>");
