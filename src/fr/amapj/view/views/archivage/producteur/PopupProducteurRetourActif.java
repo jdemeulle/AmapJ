@@ -58,7 +58,7 @@ public class PopupProducteurRetourActif extends WizardFormPopup
 		
 		addHtml("Avec cet outil, vous allez pouvoir le replacer à l'état ACTIF, ce qui vous permettra de refaire des contrats avec ce producteur.");
 		
-		String str = "Êtes-vous sur de vouloir sortir ce producteur des archives et de le placer à l'état ACTIF ?";
+		String str = "Êtes-vous sûr de vouloir sortir ce producteur des archives et de le placer à l'état ACTIF ?";
 		
 		addHtml(str);
 	}
@@ -69,3 +69,4 @@ public class PopupProducteurRetourActif extends WizardFormPopup
 		new ProducteurService().updateEtat(dto.id,EtatProducteur.ACTIF);
 	}
 }
+
