@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.droits;
 
 import java.util.List;
@@ -92,7 +93,7 @@ public class DroitsAdministrateurListPart extends StandardListPart<AdminTresorie
 	private CorePopup handleSupprimer()
 	{
 		AdminTresorierDTO dto = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer le droit administrateur à "+dto.nom+" "+dto.prenom+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer le droit administrateur à "+dto.nom+" "+dto.prenom+" ?";
 		return new SuppressionPopup(text,dto.id,e->new AccessManagementService().deleteAdmin(e));		
 	}
 }
