@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.stats;
 
 import java.util.List;
@@ -76,7 +77,7 @@ public class EGStatPeriodeContratAdherent extends AbstractExcelGenerator
 	
 	private void fillTab(RdbLink em, ExcelGeneratorTool et, PeriodeCotisationDTO periode)
 	{
-		String nomPeriode = periode==null ? "CONTRATS SANS PERIODE DE COTISATION" : periode.nom;
+		String nomPeriode = periode==null ? "CONTRATS SANS PÉRIODE DE COTISATION" : periode.nom;
 		Long idPeriode = periode==null ? null : periode.id;
 		
 		// On recherche tous contrats signés relatifs à cette periode de cotisation 
@@ -180,7 +181,7 @@ public class EGStatPeriodeContratAdherent extends AbstractExcelGenerator
 				index++;
 			}
 			et.addRow();
-			et.setCell(0, "Etat adhésion", et.grasCentreBordure);
+			et.setCell(0, "État adhésion", et.grasCentreBordure);
 			et.setCell(1, "", et.nonGrasCentreBordure);
 			
 			index = 2;
