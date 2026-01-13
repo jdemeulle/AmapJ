@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.cotisation.bilan;
 
 import java.util.List;
@@ -99,7 +100,7 @@ public class BilanCotisationView extends StandardListPart<PeriodeCotisationDTO>
 	private CorePopup handleSupprimer()
 	{
 		PeriodeCotisationDTO dto = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer la période d'adhésion "+dto.nom+" ?";
+		String text = "Êtes-vous sûr de vouloir supprimer la période d'adhésion "+dto.nom+" ?";
 		return new SuppressionPopup(text,dto.id,e->new GestionCotisationService().delete(e));		
 	}
 
