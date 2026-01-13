@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.producteur.contrats;
 
 import java.util.List;
@@ -147,7 +148,7 @@ public class ProducteurContratListPart extends StandardListPart<ModeleContratSum
 	@Override
 	protected void drawTable() 
 	{
-		addColumn("etat","Etat");
+		addColumn("etat","État");
 		addColumn("nom","Nom");
 		addColumnDate("finInscription","Fin inscription");
 		addColumnDate("dateDebut","Première livraison");
