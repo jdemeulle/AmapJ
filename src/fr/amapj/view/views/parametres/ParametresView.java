@@ -96,7 +96,7 @@ public class ParametresView extends BackOfficeLongView
 		
 		addButton("Changer les paramètres généraux",()->new PopupSaisieParametres(dto));
 		
-		addButton("Activer / Desactiver les modules optionnels",()->new PopupModulesOptionnels(dto));
+		addButton("Activer / Désactiver les modules optionnels",()->new PopupModulesOptionnels(dto));
 		
 		addLabel("Amapien");
 		
@@ -217,3 +217,4 @@ public class ParametresView extends BackOfficeLongView
 	}
 
 }
+
