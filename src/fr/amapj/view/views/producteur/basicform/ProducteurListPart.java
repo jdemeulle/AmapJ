@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.producteur.basicform;
 
 import java.util.List;
@@ -69,7 +70,7 @@ public class ProducteurListPart extends StandardListPart<ProducteurDTO>
 	{
 		addColumn("nom","Nom");
 		addColumn("utilisateurInfo","Producteurs");
-		addColumn("referentInfo","Referents");
+		addColumn("referentInfo","Référents");
 		addColumn("nbModeleContratActif","Nb contrats").center();
 		addColumnDate("dateDerniereLivraison","Dernière liv");
 		addColumnDate("dateCreation","Date création");		
@@ -99,7 +100,7 @@ public class ProducteurListPart extends StandardListPart<ProducteurDTO>
 	private SuppressionPopup handleSupprimer()
 	{
 		ProducteurDTO dto = getSelectedLine();
-		String text = "Etes vous sûr de vouloir supprimer le producteur "+dto.nom+" ?";
+		String text = "Êtes vous sûr de vouloir supprimer le producteur "+dto.nom+" ?";
 		return new SuppressionPopup(text,dto.id,e->new ProducteurService().delete(e));
 	}
 }
