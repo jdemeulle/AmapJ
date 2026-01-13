@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.gestioncontrat.editorpart;
 
 import com.vaadin.ui.Button;
@@ -110,7 +111,7 @@ public class ModifEnteteContratEditorPart extends GestionContratEditorPart
 	private void handleModifierNature()
 	{
 		String title = "Confirmer";
-		String htmlMessage = "Etes vous sûr de vouloir modifier la nature de ce contrat ?<br/>"+
+		String htmlMessage = "Êtes-vous sûr de vouloir modifier la nature de ce contrat ?<br/>"+
 							 "En effet, modifier la nature d'un contrat modifie totalement le comportement de ce contrat<br/>"+
 							 "et en particulier la façon dont les utilisateurs vont pouvoir modifier ce contrat.<br/><br/>"+
 							 "Ne faites ceci que si vous êtes sûr de vous.";
