@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.appinstance;
 
 import java.util.List;
@@ -43,7 +44,7 @@ public class PopupStateOnStartAppInstance extends FormPopup
 	 */
 	public PopupStateOnStartAppInstance(List<AppInstanceDTO> dtos)
 	{
-		popupTitle = "Etat des instances AU DEMARRAGE";
+		popupTitle = "État des instances AU DÉMARRAGE";
 		this.dtos = dtos;
 
 		setModel(state);
@@ -53,7 +54,7 @@ public class PopupStateOnStartAppInstance extends FormPopup
 	
 	protected void addFields()
 	{
-		String str = "Vous allez modifier l'état AU DEMARRAGE de "+dtos.size()+" bases<br/><br/>";
+		String str = "Vous allez modifier l'état AU DÉMARRAGE de "+dtos.size()+" bases<br/><br/>";
 		str = str +"Liste des bases <br/>";
 		
 		for (AppInstanceDTO appInstanceDTO : dtos)
@@ -64,7 +65,7 @@ public class PopupStateOnStartAppInstance extends FormPopup
 		
 		addHtml(str);
 		
-		addComboEnumField("Nouvel état AU DEMARRAGE", "stateOnStart", new NotNullValidator());
+		addComboEnumField("Nouvel état AU DÉMARRAGE", "stateOnStart", new NotNullValidator());
 			
 	}
 	
