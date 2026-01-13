@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.gestioncontrat.listpart;
 
 import java.text.SimpleDateFormat;
@@ -105,7 +106,7 @@ public class SaisieEnMassePeriodeCotisation extends FormPopup
 		
 		builder = new ComplexTableBuilder<ModeleContratSummaryDTO>(lines);
 		
-		builder.addString("Etat", false, 100, e->e.etat);
+		builder.addString("État", false, 100, e->e.etat);
 		builder.addString("Nom", false, 300, e->e.nom);
 		builder.addString("Producteur", false, 300, e->e.nomProducteur);
 		builder.addString("Première livraison", false, 100, e->df.format(e.dateDebut));
