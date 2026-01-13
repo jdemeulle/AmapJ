@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.cotisation.reception;
 
 import java.util.List;
@@ -100,9 +101,9 @@ public class AjouterEnMasseAdhesion extends WizardFormPopup
 		builder = new ComplexTableBuilder<PeriodeCotisationUtilisateurDTO>(lines);
 		
 		builder.addString("Nom", false, 200, e->e.nomUtilisateur);
-		builder.addString("Prenom", false, 200, e->e.prenomUtilisateur);
+		builder.addString("Prénom", false, 200, e->e.prenomUtilisateur);
 		builder.addCurrency("Montant", "mnt", true, 100, e->e.montantAdhesion);
-		builder.addCombo("Etat du paiement", "etat", true, 200, e->e.etatPaiementAdhesion , EtatPaiementAdhesion.class);
+		builder.addCombo("État du paiement", "etat", true, 200, e->e.etatPaiementAdhesion , EtatPaiementAdhesion.class);
 		builder.addCombo("Type du paiement", "type", true, 200, e->e.typePaiementAdhesion , TypePaiementAdhesion.class);
 		builder.setPageLength(11);
 		
@@ -196,7 +197,7 @@ public class AjouterEnMasseAdhesion extends WizardFormPopup
 			{
 				if (line.etatPaiementAdhesion==null || line.typePaiementAdhesion==null)
 				{
-					str = str+"Erreur à la ligne "+line.nomUtilisateur+" "+line.prenomUtilisateur+" : Etat du paiement ou Type du paiement n'est pas renseigné<br/>";
+					str = str+"Erreur à la ligne "+line.nomUtilisateur+" "+line.prenomUtilisateur+" : État du paiement ou Type du paiement n'est pas renseigné<br/>";
 				}
 			}
 		}
