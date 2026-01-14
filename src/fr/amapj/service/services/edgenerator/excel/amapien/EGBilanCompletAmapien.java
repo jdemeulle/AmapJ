@@ -103,7 +103,7 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	 */
 	private void addInfoGenerale(RdbLink em, ExcelGeneratorTool et, Utilisateur u, List<Contrat> cs) 
 	{
-		et.addSheet("Generalites", 2, 70);
+		et.addSheet("Généralités", 2, 70);
 		
 		et.addRow("Informations générales pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
 		et.addRow();
@@ -284,7 +284,7 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 			for (int i = 0; i < dates.size(); i++) 
 			{
 				PeriodePermanenceDateDTO date = dates.get(i);
-				String str = "Inscrit pour le "+df.format(date.datePerm) + " avec le(s) role(s) "+CollectionUtils.asString(date.getRoles(u.id), ",");
+				String str = "Inscrit pour le "+df.format(date.datePerm) + " avec le(s) rôle(s) "+CollectionUtils.asString(date.getRoles(u.id), ",");
 				addLine(et, "Date "+(i+1), str);
 			}
 			et.addRow();
@@ -330,4 +330,5 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	}
 
 }
+
 
