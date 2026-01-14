@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.cheque;
 
 import java.text.SimpleDateFormat;
@@ -43,7 +44,6 @@ import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.parametres.ParametresDTO;
 import fr.amapj.service.services.parametres.ParametresService;
 import fr.amapj.view.engine.widgets.CurrencyTextFieldConverter;
-
 
 /**
  * Feuille de de synthese multi contrat des cheques
@@ -314,6 +314,8 @@ public class EGSyntheseCheque extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		String nomUtilisateur = "tous les amapiens";
 		if (idUtilisateur!=null)
 		{
@@ -344,7 +346,7 @@ public class EGSyntheseCheque extends AbstractExcelGenerator
 			throw new AmapjRuntimeException();
 		}
 		
-		return "synthese-cheque-"+etat+"-"+nomUtilisateur;
+		return "synthese-cheque-"+param.nomAmap+"-"+etat+"-"+nomUtilisateur;
 	}
 	
 
