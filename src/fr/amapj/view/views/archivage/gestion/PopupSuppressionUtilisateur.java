@@ -131,7 +131,7 @@ public class PopupSuppressionUtilisateur extends WizardFormPopup
 		// Titre
 		setStepTitle("confirmation");
 		
-		addHtml("Vous allez supprimer DEFINITIVEMENT "+toSuppress.size()+" utilisateurs");
+		addHtml("Vous allez supprimer DÉFINITIVEMENT "+toSuppress.size()+" utilisateurs");
 		
 		addHtml("Appuyez sur Sauvegarder pour réaliser cette modification, ou Annuler pour ne rien modifier");
 		
@@ -154,3 +154,4 @@ public class PopupSuppressionUtilisateur extends WizardFormPopup
 		}
 	}
 }
+
