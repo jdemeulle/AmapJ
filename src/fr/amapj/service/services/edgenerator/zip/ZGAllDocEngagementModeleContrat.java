@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.zip;
 
 import java.util.List;
@@ -31,6 +32,8 @@ import fr.amapj.service.services.edgenerator.bin.BGDocEngagementSigne;
 import fr.amapj.service.services.edgenerator.excel.docengagement.EGBilanDocEngagementSignOnLine;
 import fr.amapj.service.services.edgenerator.pdf.PGEngagement;
 import fr.amapj.service.services.edgenerator.pdf.PGEngagement.PGEngagementMode;
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Retourne un zip avec tous les documents d'engagement pour un modele de contrat
@@ -81,7 +84,9 @@ public class ZGAllDocEngagementModeleContrat extends AbstractZipGenerator
 	@Override
 	public String getFileName(RdbLink em) 
 	{
-		return "contrats";
+		ParametresDTO param = new ParametresService().getParametres();
+		
+		return "contrats-"+param.nomAmap;
 	}
 
 	@Override
