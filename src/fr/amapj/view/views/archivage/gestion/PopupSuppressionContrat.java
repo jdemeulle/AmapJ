@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.gestion;
 
 import java.util.ArrayList;
@@ -131,7 +132,7 @@ public class PopupSuppressionContrat extends WizardFormPopup
 		// Titre
 		setStepTitle("confirmation");
 		
-		addHtml("Vous allez supprimer DEFINITIVEMENT "+modeleContratToSuppress.size()+" contrats");
+		addHtml("Vous allez supprimer DÉFINITIVEMENT "+modeleContratToSuppress.size()+" contrats");
 		
 		addHtml("Appuyez sur Sauvegarder pour réaliser cette modification, ou Annuler pour ne rien modifier");
 		
