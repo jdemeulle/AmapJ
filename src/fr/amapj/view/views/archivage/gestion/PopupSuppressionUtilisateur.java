@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.gestion;
 
 import java.util.ArrayList;
@@ -118,7 +119,7 @@ public class PopupSuppressionUtilisateur extends WizardFormPopup
 		
 		if (toSuppress.size()==0)
 		{
-			return "Vous devez selectionner au moins un utilisateur pour pouvoir continuer.";
+			return "Vous devez sélectionner au moins un utilisateur pour pouvoir continuer.";
 		}
 		
 		return null;
