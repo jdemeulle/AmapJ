@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.gestion;
 
 import java.util.ArrayList;
@@ -120,7 +121,7 @@ public class PopupArchivageProducteur extends WizardFormPopup
 		
 		if (producteurToArchive.size()==0)
 		{
-			return "Vous devez selectionner au moins un producteur pour pouvoir continuer.";
+			return "Vous devez sélectionner au moins un producteur pour pouvoir continuer.";
 		}
 		
 		return null;
