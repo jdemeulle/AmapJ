@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.nouvelarrivant;
 
 import java.util.Date;
@@ -35,7 +36,8 @@ import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.edgenerator.excel.feuilledistribution.amapien.EGFeuilleDistributionAmapien;
 import fr.amapj.service.services.gestioncontrat.GestionContratService;
 import fr.amapj.service.services.gestioncontrat.ModeleContratSummaryDTO;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet de generer un fichier avec l'ensemble des contrats vierges
@@ -145,13 +147,15 @@ public class EGAllContratsVierges extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		if (egMode==EGMode.ACTIFS)
 		{
-			return "liasse-contrats-vierges-actifs";
+			return "liasse-contrats-vierges-actifs-"+param.nomAmap;
 		}
 		else
 		{
-			return "liasse-contrats-vierges-futurs";
+			return "liasse-contrats-vierges-futurs-"+param.nomAmap;
 		}
 	}
 	
