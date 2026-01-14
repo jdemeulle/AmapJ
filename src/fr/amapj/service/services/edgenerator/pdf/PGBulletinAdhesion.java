@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.pdf;
 
 import java.util.List;
@@ -40,7 +41,8 @@ import fr.amapj.service.engine.generator.pdf.PdfGeneratorTool;
 import fr.amapj.service.engine.generator.pdf.TestablePdfGenerator;
 import fr.amapj.service.services.edgenerator.velocity.VCBuilder;
 import fr.amapj.service.services.editionspe.EditionSpeService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation des bulletins d'adhesion au format PDF
@@ -236,22 +238,24 @@ public class PGBulletinAdhesion extends TestablePdfGenerator
 	@Override
 	public String getFileNameStandard(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		if (mode==Mode.ALL_BULLETIN_PERIODE)
 		{
 			PeriodeCotisation pc =  em.find(PeriodeCotisation.class, idPeriode);
-			return "bulletin-adhesion-"+pc.nom;	
+			return "bulletin-adhesion-"+param.nomAmap+"-"+pc.nom;	
 		}
 		else if (mode==Mode.ONE_BULLETIN_CREATED)
 		{
 			PeriodeCotisationUtilisateur pcu =  em.find(PeriodeCotisationUtilisateur.class, idPeriodeUtilisateur);
 			Utilisateur u = pcu.utilisateur;
-			return "bulletin-adhesion-"+pcu.periodeCotisation.nom+"-"+u.nom+" "+u.prenom;
+			return "bulletin-adhesion-"+param.nomAmap+"-"+pcu.periodeCotisation.nom+"-"+u.nom+" "+u.prenom;
 		}
 		else if (mode==Mode.ONE_BULLETIN_NOT_CREATED)
 		{ 
 			PeriodeCotisation pc =  em.find(PeriodeCotisation.class, idPeriode);
 			Utilisateur u =  em.find(Utilisateur.class, idUtilisateur);
-			return "bulletin-adhesion-"+pc.nom+"-"+u.nom+" "+u.prenom;
+			return "bulletin-adhesion-"+param.nomAmap+"-"+pc.nom+"-"+u.nom+" "+u.prenom;
 		}
 		throw new AmapjRuntimeException();
 		
