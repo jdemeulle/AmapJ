@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.gestion;
 
 import java.util.ArrayList;
@@ -117,7 +118,7 @@ public class PopupSuppressionPeriodeCotisation extends WizardFormPopup
 		
 		if (toSuppress.size()==0)
 		{
-			return "Vous devez selectionner au moins une période de cotisation pour pouvoir continuer.";
+			return "Vous devez sélectionner au moins une période de cotisation pour pouvoir continuer.";
 		}
 		
 		return null;
@@ -129,7 +130,7 @@ public class PopupSuppressionPeriodeCotisation extends WizardFormPopup
 		// Titre
 		setStepTitle("confirmation");
 		
-		addHtml("Vous allez supprimer DEFINITIVEMENT "+toSuppress.size()+" periodes de cotisation");
+		addHtml("Vous allez supprimer DÉFINITIVEMENT "+toSuppress.size()+" periodes de cotisation");
 		
 		addHtml("Appuyez sur Sauvegarder pour réaliser cette modification, ou Annuler pour ne rien modifier");
 		
