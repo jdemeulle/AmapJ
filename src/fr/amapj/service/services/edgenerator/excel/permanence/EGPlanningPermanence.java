@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.permanence;
 
 import java.io.IOException;
@@ -35,7 +36,8 @@ import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceDTO;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceDateDTO;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation du planning de dsitribution au format Excel 
@@ -147,8 +149,10 @@ public class EGPlanningPermanence extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+		
 		PeriodePermanence pp = em.find(PeriodePermanence.class, idPeriodePermanence);
-		return "planning-permanence-"+pp.nom; 
+		return "planning-permanence-"+param.nomAmap+"-"+pp.nom; 
 	}
 
 	@Override
