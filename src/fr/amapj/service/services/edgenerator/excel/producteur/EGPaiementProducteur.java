@@ -35,7 +35,8 @@ import fr.amapj.service.services.edgenerator.excel.EGRemise;
 import fr.amapj.service.services.gestioncontrat.GestionContratService;
 import fr.amapj.service.services.remiseproducteur.RemiseDTO;
 import fr.amapj.service.services.remiseproducteur.RemiseProducteurService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation d'une synthese des paiements à l'attention du producteur
@@ -210,8 +211,10 @@ public class EGPaiementProducteur extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		ModeleContrat mc = em.find(ModeleContrat.class,modeleContratId);
-		return "bilan-paiement-"+mc.nom;
+		return "bilan-paiement-"+param.nomAmap+"-"+mc.nom;
 	}
 
 	@Override
@@ -232,3 +235,4 @@ public class EGPaiementProducteur extends AbstractExcelGenerator
 	}
 
 }
+
