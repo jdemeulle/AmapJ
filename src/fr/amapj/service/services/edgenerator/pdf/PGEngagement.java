@@ -134,7 +134,7 @@ public class PGEngagement extends TestablePdfGenerator
 		
 		if (engJson.idModeleContrat ==null)
 		{
-			return "<p>Vous devez selectionner un contrat pour pouvoir tester !</p>";
+			return "<p>Vous devez sélectionner un contrat pour pouvoir tester !</p>";
 		}
 		
 		modeleContratId = engJson.idModeleContrat;
@@ -382,3 +382,4 @@ public class PGEngagement extends TestablePdfGenerator
 	}
 
 }
+
