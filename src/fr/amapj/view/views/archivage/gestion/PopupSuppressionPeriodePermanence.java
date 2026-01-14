@@ -130,7 +130,7 @@ public class PopupSuppressionPeriodePermanence extends WizardFormPopup
 		// Titre
 		setStepTitle("confirmation");
 		
-		addHtml("Vous allez supprimer DEFINITIVEMENT "+toSuppress.size()+" périodes de permanence");
+		addHtml("Vous allez supprimer DÉFINITIVEMENT "+toSuppress.size()+" périodes de permanence");
 		
 		addHtml("Appuyez sur Sauvegarder pour réaliser cette modification, ou Annuler pour ne rien modifier");
 		
@@ -153,3 +153,4 @@ public class PopupSuppressionPeriodePermanence extends WizardFormPopup
 		}
 	}
 }
+
