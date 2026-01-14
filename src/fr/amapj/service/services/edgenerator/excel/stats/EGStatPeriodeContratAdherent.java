@@ -41,7 +41,8 @@ import fr.amapj.service.services.gestioncotisation.BilanAdhesionDTO;
 import fr.amapj.service.services.gestioncotisation.GestionCotisationService;
 import fr.amapj.service.services.gestioncotisation.PeriodeCotisationDTO;
 import fr.amapj.service.services.gestioncotisation.PeriodeCotisationUtilisateurDTO;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation d'un bilan avec 
@@ -273,7 +274,9 @@ public class EGStatPeriodeContratAdherent extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
-		return "cotisation-contrat-adherent";
+		ParametresDTO param = new ParametresService().getParametres();
+
+		return "cotisation-contrat-adherent-"+param.nomAmap;
 	}
 	
 
@@ -293,3 +296,4 @@ public class EGStatPeriodeContratAdherent extends AbstractExcelGenerator
 	}
 	
 }
+
