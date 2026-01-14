@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.utilisateur;
 
 import java.text.SimpleDateFormat;
@@ -75,7 +76,7 @@ public class PopupUtilisateurVoirPart extends WizardFormPopup
 		addTextField("Nom", "nom").setReadOnly(true);
 
 		// Champ 2
-		addTextField("Prenom", "prenom").setReadOnly(true);
+		addTextField("Prénom", "prenom").setReadOnly(true);
 
 		// Champ 3
 		addTextField("E mail", "email").setReadOnly(true);
