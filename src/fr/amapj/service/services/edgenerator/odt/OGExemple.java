@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.odt;
 
 import java.util.List;
@@ -37,7 +38,8 @@ import fr.amapj.service.services.editionspe.EditionSpeService;
 import fr.amapj.service.services.mescontrats.MesContratsService;
 import fr.amapj.service.services.producteur.ProdUtilisateurDTO;
 import fr.amapj.service.services.producteur.ProducteurService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Exemple pour la generation d'un fichier au format ODT
@@ -110,8 +112,10 @@ public class OGExemple extends AbstractOdtGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+		
 		ModeleContrat mc = em.find(ModeleContrat.class,modeleContratId);
-		return "engagements-"+mc.nom;
+		return "engagements-"+param.nomAmap+"-"+mc.nom;
 	}
 
 	@Override
