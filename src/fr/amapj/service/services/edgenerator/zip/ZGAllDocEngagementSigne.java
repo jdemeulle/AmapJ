@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.zip;
 
 import java.util.List;
@@ -28,7 +29,8 @@ import fr.amapj.service.engine.generator.zip.AbstractZipGenerator;
 import fr.amapj.service.engine.generator.zip.ZipGeneratorTool;
 import fr.amapj.service.services.docengagement.signonline.DocEngagementSignOnLineDTO;
 import fr.amapj.service.services.docengagement.signonline.core.CoreDocEngagementSignOnLineService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Retourne un zip avec une liste de documents d'engagement signés par les amapiens
@@ -66,7 +68,9 @@ public class ZGAllDocEngagementSigne extends AbstractZipGenerator
 	@Override
 	public String getFileName(RdbLink em) 
 	{
-		return "contrats";
+		ParametresDTO param = new ParametresService().getParametres();
+		
+		return "contrats-"+param.nomAmap;
 	}
 
 	@Override
