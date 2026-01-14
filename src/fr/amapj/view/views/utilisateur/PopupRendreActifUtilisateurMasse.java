@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.utilisateur;
 
 import java.util.ArrayList;
@@ -119,7 +120,7 @@ public class PopupRendreActifUtilisateurMasse extends WizardFormPopup
 		
 		if (toUpdate.size()==0)
 		{
-			return "Vous devez selectionner au moins un utilisateur pour pouvoir continuer.";
+			return "Vous devez sélectionner au moins un utilisateur pour pouvoir continuer.";
 		}
 		
 		return null;
