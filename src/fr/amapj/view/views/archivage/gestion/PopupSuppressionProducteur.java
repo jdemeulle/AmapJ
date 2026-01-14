@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.gestion;
 
 import java.util.ArrayList;
@@ -116,7 +117,7 @@ public class PopupSuppressionProducteur extends WizardFormPopup
 		
 		if (toSuppress.size()==0)
 		{
-			return "Vous devez selectionner au moins un producteur pour pouvoir continuer.";
+			return "Vous devez sélectionner au moins un producteur pour pouvoir continuer.";
 		}
 		
 		return null;
@@ -128,7 +129,7 @@ public class PopupSuppressionProducteur extends WizardFormPopup
 		// Titre
 		setStepTitle("confirmation");
 		
-		addHtml("Vous allez supprimer DEFINITIVEMENT "+toSuppress.size()+" producteurs");
+		addHtml("Vous allez supprimer DÉFINITIVEMENT "+toSuppress.size()+" producteurs");
 		
 		addHtml("Appuyez sur Sauvegarder pour réaliser cette modification, ou Annuler pour ne rien modifier");
 		
