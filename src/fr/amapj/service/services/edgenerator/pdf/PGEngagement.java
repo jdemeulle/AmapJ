@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.pdf;
 
 import java.util.List;
@@ -43,7 +44,8 @@ import fr.amapj.service.services.mescontrats.ContratDTO;
 import fr.amapj.service.services.mescontrats.MesContratsService;
 import fr.amapj.service.services.producteur.ProdUtilisateurDTO;
 import fr.amapj.service.services.producteur.ProducteurService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation des engagements au format PDF
@@ -308,24 +310,25 @@ public class PGEngagement extends TestablePdfGenerator
 	public String getFileNameStandard(RdbLink em)
 	{
 		ModeleContrat mc = em.find(ModeleContrat.class,modeleContratId);
+		ParametresDTO param = new ParametresService().getParametres();
 		
 		switch (mode)
 		{
 		case TOUS_LES_CONTRATS:
-			return "engagements-"+mc.nom;	
+			return "engagements-"+param.nomAmap+"-"+mc.nom;	
 
 		case TOUS_LES_CONTRATS_EN_MODE_TEST:
-			return "test-"+mc.nom;	
+			return "test-"+param.nomAmap+"-"+mc.nom;	
 			
 		case UN_CONTRAT:
 			Utilisateur u = em.find(Contrat.class,contratId).utilisateur;
-			return "document-engagement-"+mc.nom+"-"+u.nom+" "+u.prenom;
+			return "document-engagement-"+param.nomAmap+"-"+mc.nom+"-"+u.nom+" "+u.prenom;
 			
 		case UN_VIERGE:
-			return "engagement-vierge-"+mc.nom;	
+			return "engagement-vierge-"+param.nomAmap+"-"+mc.nom;	
 			
 		case CONTRAT_A_SIGNER:
-			return "signature-contrat";
+			return "signature-contrat-"+param.nomAmap;
 			
 		default:
 			throw new AmapjRuntimeException();
