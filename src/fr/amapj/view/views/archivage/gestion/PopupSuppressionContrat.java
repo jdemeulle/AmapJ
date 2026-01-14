@@ -120,7 +120,7 @@ public class PopupSuppressionContrat extends WizardFormPopup
 		
 		if (modeleContratToSuppress.size()==0)
 		{
-			return "Vous devez selectionner au moins un contrat pour pouvoir continuer.";
+			return "Vous devez sélectionner au moins un contrat pour pouvoir continuer.";
 		}
 		
 		return null;
@@ -155,3 +155,4 @@ public class PopupSuppressionContrat extends WizardFormPopup
 		}
 	}
 }
+
