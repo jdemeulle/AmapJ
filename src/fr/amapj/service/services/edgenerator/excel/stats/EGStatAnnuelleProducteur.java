@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.stats;
 
 import java.io.IOException;
@@ -31,7 +32,8 @@ import fr.amapj.model.models.fichierbase.Producteur;
 import fr.amapj.service.engine.generator.excel.AbstractExcelGenerator;
 import fr.amapj.service.engine.generator.excel.ExcelFormat;
 import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Statistiques annuelles sur les producteurs 
@@ -119,8 +121,10 @@ public class EGStatAnnuelleProducteur extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+		
 		//ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
-		return "stat-producteur-";
+		return "stat-producteur-"+param.nomAmap;
 	}
 	
 
