@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.docengagement;
 
 import java.text.SimpleDateFormat;
@@ -34,7 +35,8 @@ import fr.amapj.service.services.docengagement.signonline.DocEngagementSignOnLin
 import fr.amapj.service.services.docengagement.signonline.DocEngagementSignOnLineService;
 import fr.amapj.service.services.producteur.ProducteurService;
 import fr.amapj.service.services.utilisateur.util.UtilisateurUtil;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation du bilan de la signature en ligne des documents d'engagements
@@ -163,8 +165,10 @@ public class EGBilanDocEngagementSignOnLine extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		ModeleContrat mc = em.find(ModeleContrat.class, idModeleContrat);
-		return "bilan-signature-"+mc.nom;
+		return "bilan-signature-"+param.nomAmap+"-"+mc.nom;
 	}
 
 	@Override
