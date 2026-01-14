@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.feuilledistribution.amapien;
 
 import java.io.IOException;
@@ -35,7 +36,8 @@ import fr.amapj.service.engine.generator.excel.AbstractExcelGenerator;
 import fr.amapj.service.engine.generator.excel.ExcelFormat;
 import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.edgenerator.excel.feuilledistribution.amapien.EGFeuilleDistributionAmapien.EGMode;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet l'impression toutes les feuilles de distribution amapien  
@@ -101,8 +103,10 @@ public class EGLiasseFeuilleDistributionAmapien  extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
-		return "distri-amapien-"+mc.nom;
+		return "distri-amapien-"+param.nomAmap+"-"+mc.nom;
 	}
 
 
