@@ -50,7 +50,8 @@ import fr.amapj.service.services.permanence.periode.PeriodePermanenceDTO;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceDateDTO;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceService;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceUtilisateurDTO;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet de generer un fichier avec l'ensemble des informations connues sur un amapien
@@ -308,8 +309,10 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		Utilisateur u = em.find(Utilisateur.class, idUtilisateur);
-		return "bilan-complet-amapien-"+u.nom+" "+u.prenom;
+		return "bilan-complet-amapien-"+param.nomAmap+"-"+u.nom+" "+u.prenom;
 	}
 	
 
@@ -327,3 +330,4 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	}
 
 }
+
