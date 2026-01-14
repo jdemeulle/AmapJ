@@ -117,7 +117,7 @@ public class PGBulletinAdhesion extends TestablePdfGenerator
 		
 		if (engJson.idPeriodeCotisation ==null)
 		{
-			return "<p>Vous devez selectionner une periode pour pouvoir tester !</p>";
+			return "<p>Vous devez sélectionner une période pour pouvoir tester !</p>";
 		}
 		
 		idPeriode = engJson.idPeriodeCotisation;
@@ -163,7 +163,7 @@ public class PGBulletinAdhesion extends TestablePdfGenerator
 		Ret<Integer> ret = montantSupplier.get();
 		if (ret.isOK()==false)
 		{
-			et.addContent("Il y a une erreur dans la saisie du montant de l'adhesion<br/>");
+			et.addContent("Il y a une erreur dans la saisie du montant de l'adhésion<br/>");
 			et.addContent(ret.msg());
 			return ;
 		}
@@ -273,15 +273,16 @@ public class PGBulletinAdhesion extends TestablePdfGenerator
 		{
 			PeriodeCotisationUtilisateur pcu =  em.find(PeriodeCotisationUtilisateur.class, idPeriodeUtilisateur);
 			Utilisateur u = pcu.utilisateur;
-			return "le bulletin d'adhesion "+pcu.periodeCotisation.nom+" pour "+u.nom+" "+u.prenom;
+			return "le bulletin d'adhésion "+pcu.periodeCotisation.nom+" pour "+u.nom+" "+u.prenom;
 		}
 		else if (mode==Mode.ONE_BULLETIN_NOT_CREATED)
 		{ 
 			PeriodeCotisation pc =  em.find(PeriodeCotisation.class, idPeriode);
 			Utilisateur u =  em.find(Utilisateur.class, idUtilisateur);
-			return "le bulletin d'adhesion "+pc.nom+" pour "+u.nom+" "+u.prenom;
+			return "le bulletin d'adhésion "+pc.nom+" pour "+u.nom+" "+u.prenom;
 		}
 		throw new AmapjRuntimeException();
 	}
 
 }
+
