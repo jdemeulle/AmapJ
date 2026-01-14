@@ -77,7 +77,7 @@ public class EGLiasseFeuilleDistributionAmapien  extends AbstractExcelGenerator
 			SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 			
 			// Ligne 1 à 5
-			et.addRow("AUCUN CONTRAT SIGNE !!!",et.grasGaucheNonWrappe);
+			et.addRow("AUCUN CONTRAT SIGNÉ !!!",et.grasGaucheNonWrappe);
 			et.addRow(mc.nom,et.grasGaucheNonWrappe);
 			et.addRow(mc.description,et.grasGaucheNonWrappe);
 			et.addRow("Extrait le "+df1.format(DateUtils.getDate()),et.grasGaucheNonWrappe);
@@ -131,3 +131,4 @@ public class EGLiasseFeuilleDistributionAmapien  extends AbstractExcelGenerator
 	}
 
 }
+
