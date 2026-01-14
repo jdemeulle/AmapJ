@@ -202,7 +202,7 @@ public class PGEngagement extends TestablePdfGenerator
 		//
 		if (c.modeleContrat.getId().equals(modeleContratId)==false)
 		{
-			throw new AmapjRuntimeException("Incoherence");
+			throw new AmapjRuntimeException("Incohérence");
 		}
 		VelocityTools vt = addOneContrat(em,c.modeleContrat,c,utilisateur,et,htmlContent,producteur);
 		usedVars = vt.getUsedVars();
@@ -382,4 +382,5 @@ public class PGEngagement extends TestablePdfGenerator
 	}
 
 }
+
 
