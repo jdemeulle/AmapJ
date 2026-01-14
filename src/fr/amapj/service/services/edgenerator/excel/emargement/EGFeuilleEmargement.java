@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.emargement;
 
 import java.io.IOException;
@@ -35,7 +36,8 @@ import fr.amapj.service.engine.generator.excel.AbstractExcelGenerator;
 import fr.amapj.service.engine.generator.excel.ExcelFormat;
 import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.editionspe.EditionSpeService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation d'une feuille d'émargement (hebdomadaire ou mensuelle)
@@ -98,6 +100,7 @@ public class EGFeuilleEmargement extends AbstractExcelGenerator
 	
 	public LibInfo getLibForName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		LibInfo res = new LibInfo();
 		
 		SimpleDateFormat df2 = new SimpleDateFormat("MMMMM yyyy");
@@ -115,7 +118,7 @@ public class EGFeuilleEmargement extends AbstractExcelGenerator
 			res.fin =  DateUtils.addMonth(res.debut,1);
 			res.lib1 = df2.format(res.debut);
 			res.lib2 = "mensuelle";
-			res.fileName = "emargement-mensuel-"+df4.format(res.debut);
+			res.fileName = "emargement-mensuel-"+param.nomAmap+"-"+df4.format(res.debut);
 			res.displayName = "la feuille d'émargement mensuelle de "+df2.format(res.debut);
 		}
 		else
@@ -124,7 +127,7 @@ public class EGFeuilleEmargement extends AbstractExcelGenerator
 			res.fin = DateUtils.addDays(res.debut,7);
 			res.lib1 = "S"+df3.format(res.debut);
 			res.lib2 = "hebdomadaire";
-			res.fileName = "emargement-hebdomadaire-"+df5.format(res.debut);
+			res.fileName = "emargement-hebdomadaire-"+param.nomAmap+"-"+df5.format(res.debut);
 			res.displayName = "la feuille d'émargement hebdomadaire semaine "+df3.format(res.debut);
 		}
 		
