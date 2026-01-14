@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.livraison;
 
 import java.text.SimpleDateFormat;
@@ -44,7 +45,8 @@ import fr.amapj.model.models.permanence.periode.PeriodePermanenceDate;
 import fr.amapj.service.services.meslivraisons.MesLivraisonsService;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceDateDTO;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Partie commune du code entre EGLivraisonAmapien et PGLivraisonAmapien
@@ -238,19 +240,21 @@ public class LivraisonAmapienCommon
 
 	public String getFileName(TypPeriode typPeriode,Date startDate,Date endDate)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		switch (typPeriode)
 		{
 			case SEMAINE:
-				return "semaine-"+FormatUtils.getDateFile().format(startDate);
+				return "semaine-"+param.nomAmap+"-"+FormatUtils.getDateFile().format(startDate);
 				
 			case MOIS:
-				return "mois-"+FormatUtils.getMoisFile().format(startDate);
+				return "mois-"+param.nomAmap+"-"+FormatUtils.getMoisFile().format(startDate);
 			
 			case TRIMESTRE:
-				return "trimestre-"+FormatUtils.formatTrimestreFile(startDate);
+				return "trimestre-"+param.nomAmap+"-"+FormatUtils.formatTrimestreFile(startDate);
 				
 			case A_PARTIR_DE:
-				return "tout-"+FormatUtils.getDateFile().format(startDate);
+				return "tout-"+param.nomAmap+"-"+FormatUtils.getDateFile().format(startDate);
 				
 				
 			default:
