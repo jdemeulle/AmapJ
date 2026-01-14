@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.permanence;
 
 import java.io.IOException;
@@ -40,7 +41,8 @@ import fr.amapj.service.services.permanence.periode.PeriodePermanenceService;
 import fr.amapj.service.services.permanence.periode.PeriodePermanenceUtilisateurDTO;
 import fr.amapj.service.services.utilisateur.util.UtilisateurUtil;
 import fr.amapj.service.services.utilisateur.util.UtilisateurUtil.EmailInfo;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet de faire un bilan des inscriptions à une période de permanence
@@ -182,8 +184,10 @@ public class EGBilanInscriptionPermanence extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+		
 		PeriodePermanence pp = em.find(PeriodePermanence.class, idPeriodePermanence);
-		return "bilan-permanence-"+pp.nom;
+		return "bilan-permanence-"+param.nomAmap+"-"+pp.nom;
 	}
 
 	@Override
