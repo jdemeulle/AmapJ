@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.feuilledistribution.amapien;
 
 import java.io.IOException;
@@ -41,7 +42,8 @@ import fr.amapj.service.services.gestioncontrat.GestionContratService;
 import fr.amapj.service.services.mescontrats.ContratDTO;
 import fr.amapj.service.services.mescontrats.ContratLigDTO;
 import fr.amapj.service.services.mescontrats.MesContratsService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet l'impression de la feuille de distribution pour un amapien 
@@ -208,8 +210,10 @@ public class EGFeuilleDistributionAmapien  extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
-		String str = "distri-amapien-"+mc.nom;
+		String str = "distri-amapien-"+param.nomAmap+"-"+mc.nom;
 		
 		if (mode==EGMode.UN_VIERGE)
 		{
