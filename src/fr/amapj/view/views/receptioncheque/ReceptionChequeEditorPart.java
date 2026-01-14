@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.receptioncheque;
 
 import java.text.SimpleDateFormat;
@@ -174,7 +175,7 @@ public class ReceptionChequeEditorPart extends FormPopup
 		if (mode==Mode.MODELE_CONTRAT)
 		{
 			builder.addString("Nom", false, 150, e->e.nomUtilisateur);
-			builder.addString("Prenom", false, 150, e->e.prenomUtilisateur);
+			builder.addString("Prénom", false, 150, e->e.prenomUtilisateur);
 		}
 		
 		builder.addString("Date", false, 150, e->df.format(e.datePaiement));
