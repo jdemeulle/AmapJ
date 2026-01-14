@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.gestion;
 
 import java.util.ArrayList;
@@ -125,7 +126,7 @@ public class PopupArchivageContrat extends WizardFormPopup
 		
 		if (modeleContratToArchive.size()==0)
 		{
-			return "Vous devez selectionner au moins un contrat pour pouvoir continuer.";
+			return "Vous devez sélectionner au moins un contrat pour pouvoir continuer.";
 		}
 		
 		return null;
