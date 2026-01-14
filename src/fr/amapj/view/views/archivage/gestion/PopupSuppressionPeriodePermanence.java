@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.archivage.gestion;
 
 import java.util.ArrayList;
@@ -84,7 +85,7 @@ public class PopupSuppressionPeriodePermanence extends WizardFormPopup
 	private void addFieldSaisieContrat()
 	{
 		// Titre
-		setStepTitle("les périodes de cotisation à supprimer");
+		setStepTitle("les périodes de permanence à supprimer");
 		
 		dtos = new PeriodePermanenceService().getAllPeriodePermanenceSupprimables(param);
 		toSuppress = new ArrayList<SmallPeriodePermanenceDTO>();
@@ -117,7 +118,7 @@ public class PopupSuppressionPeriodePermanence extends WizardFormPopup
 		
 		if (toSuppress.size()==0)
 		{
-			return "Vous devez selectionner au moins une période de permanence pour pouvoir continuer.";
+			return "Vous devez sélectionner au moins une période de permanence pour pouvoir continuer.";
 		}
 		
 		return null;
@@ -129,7 +130,7 @@ public class PopupSuppressionPeriodePermanence extends WizardFormPopup
 		// Titre
 		setStepTitle("confirmation");
 		
-		addHtml("Vous allez supprimer DEFINITIVEMENT "+toSuppress.size()+" periodes de permanence");
+		addHtml("Vous allez supprimer DEFINITIVEMENT "+toSuppress.size()+" périodes de permanence");
 		
 		addHtml("Appuyez sur Sauvegarder pour réaliser cette modification, ou Annuler pour ne rien modifier");
 		
