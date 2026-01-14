@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.nouvelarrivant;
 
 import java.text.SimpleDateFormat;
@@ -39,7 +40,8 @@ import fr.amapj.service.services.visiteamap.VisiteAmapDTO.Jour;
 import fr.amapj.service.services.visiteamap.VisiteAmapDTO.LigneContrat;
 import fr.amapj.service.services.visiteamap.VisiteAmapDTO.Producteur;
 import fr.amapj.service.services.visiteamap.VisiteAmapService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet de generer un fichier avec une vision style VisiteAmap
@@ -151,13 +153,15 @@ public class EGVisiteAmap extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		if (egMode==EGMode.ACTIFS)
 		{
-			return "découverte";
+			return "découverte-"+param.nomAmap;
 		}
 		else
 		{
-			return "découverte-futur";
+			return "découverte-futur-"+param.nomAmap;
 		}
 	}
 	
