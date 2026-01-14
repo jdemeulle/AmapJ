@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel.mntlivre;
 
 import java.util.List;
@@ -33,7 +34,8 @@ import fr.amapj.model.models.fichierbase.Utilisateur;
 import fr.amapj.service.engine.generator.excel.AbstractExcelGenerator;
 import fr.amapj.service.engine.generator.excel.ExcelFormat;
 import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation d'un bilan des montants livrés avec
@@ -124,10 +126,12 @@ public class EGProducteurMntLivre extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		switch (typPeriode)
 		{
-		case MOIS: return "mnt-livre-producteur-mois";
-		case JOUR: return "mnt-livre-producteur-jour";
+		case MOIS: return "mnt-livre-producteur-mois-"+param.nomAmap;
+		case JOUR: return "mnt-livre-producteur-jour-"+param.nomAmap;
 		default: throw new AmapjRuntimeException();
 		}
 		
