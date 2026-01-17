@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.produit;
 
 import java.util.Arrays;
@@ -134,18 +135,18 @@ public class ProduitEditorPart extends WizardFormPopup
 		
 		if (dto.idProduitEnStock==null)
 		{
-			return "Si vous utilisez une regele de conversion, vous devez indiquer un produit equivalent";
+			return "Si vous utilisez une règle de conversion, vous devez indiquer un produit équivalent";
 		}
 		
 		ProduitDTO prodEquivalent = new ProduitService().loadProduit(dto.idProduitEnStock);
 		if (prodEquivalent.limiteQuantite==ProduitLimiteQuantite.NON_SUIVI)
 		{
-			return "Le produit equivalent n'est pas correct : il doit être lui même suivi en stock";
+			return "Le produit équivalent n'est pas correct : il doit être lui même suivi en stock";
 		}
 		
 		if (prodEquivalent.limiteQuantite==ProduitLimiteQuantite.SUIVI_AVEC_REGLE_CALCUL)
 		{
-			return "Le produit equivalent n'est pas correct : il ne peut pas être lui même basé sur une régle de calcul.";
+			return "Le produit équivalent n'est pas correct : il ne peut pas être lui même basé sur une régle de calcul.";
 		}
 		
 		return null;
