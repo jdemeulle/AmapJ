@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.searcher;
 
 import java.util.List;
@@ -48,7 +49,7 @@ public class SDEditionSpe implements SearcherDefinition
 		switch (typEditionSpecifique)
 		{
 		case ETIQUETTE_PRODUCTEUR:
-			return "Etiquette";
+			return "Étiquette";
 			
 		case CONTRAT_ENGAGEMENT:
 			return "Contrat d'engagement";
@@ -57,7 +58,7 @@ public class SDEditionSpe implements SearcherDefinition
 			return "Bulletin d'adhésion";
 
 		default:
-			return "Edition spécifique";
+			return "Édition spécifique";
 		}
 	}
 
