@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.utilisateur;
 
 import java.util.List;
@@ -98,7 +99,7 @@ public class CreationUtilisateurEditorPart extends WizardFormPopup
 		addTextField("Nom", "nom",notNull);
 
 		// Champ 2
-		addTextField("Prenom", "prenom",notNull);
+		addTextField("Prénom", "prenom",notNull);
 
 		// Champ 3
 		addTextField("E mail", "email",email);
