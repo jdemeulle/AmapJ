@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.model.models.param.paramecran;
 
 import fr.amapj.model.engine.metadata.MetaDataEnum;
@@ -73,7 +74,7 @@ public class PELivraisonAmapien  extends AbstractParamEcran
 			{		
 				add("Ce champ vous permet de choisir les personnes pouvant accéder à l'écran Livraisons d'un amapien");
 
-				add(REFERENT, "Referent,Trésorier,Admin" , "Dans ce mode, cet écran est accessible aux référents, trésoriers et admin. C'est le cas standard.");
+				add(REFERENT, "Référent, Trésorier, Admin" , "Dans ce mode, cet écran est accessible aux référents, trésoriers et admin. C'est le cas standard.");
 				
 				add(ALL, "Tout le monde" , "Dans ce mode, cet écran est accessible à tous.");
 				
