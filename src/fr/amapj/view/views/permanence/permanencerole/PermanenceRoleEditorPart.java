@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.permanence.permanencerole;
 
 import com.vaadin.data.util.BeanItem;
@@ -86,7 +87,7 @@ public class PermanenceRoleEditorPart extends WizardFormPopup
 	{
 		if (dto.defaultRole==true)
 		{
-			return "Vous ne pouvez pas modifier ce role, car c'est le role par défaut";
+			return "Vous ne pouvez pas modifier ce rôle, car c'est le rôle par défaut";
 		}
 		return null;
 	}
