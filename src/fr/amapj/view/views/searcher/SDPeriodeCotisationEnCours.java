@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.searcher;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public class SDPeriodeCotisationEnCours implements SearcherDefinition
 	@Override
 	public String getTitle()
 	{
-		return "Période d'adhesion en cours";
+		return "Période d'adhésion en cours";
 	}
 
 	@Override
