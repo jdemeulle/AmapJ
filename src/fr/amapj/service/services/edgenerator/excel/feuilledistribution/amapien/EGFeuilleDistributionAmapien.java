@@ -101,6 +101,7 @@ public class EGFeuilleDistributionAmapien  extends AbstractExcelGenerator
 	 */
 	public void addOnePage(RdbLink em, ExcelGeneratorTool et,String nomPage)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
 		
 		// Avec une sous requete, on récupere la liste des produits
@@ -126,7 +127,7 @@ public class EGFeuilleDistributionAmapien  extends AbstractExcelGenerator
 	    List<String> titres = new ArrayList<>();
 	    titres.add("");
 	    
-	    String firstLine = "Feuille de distribution amapien de ";
+	    String firstLine = param.nomAmap+" - Feuille de distribution amapien de ";
 	    if (mode==EGMode.STD)
 	    {
 	    	Utilisateur u = em.find(Contrat.class, contratId).utilisateur;
@@ -258,3 +259,4 @@ public class EGFeuilleDistributionAmapien  extends AbstractExcelGenerator
 	}
 
 }
+
