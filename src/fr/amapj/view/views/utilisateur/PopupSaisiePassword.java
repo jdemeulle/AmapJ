@@ -1,0 +1,61 @@
+/*
+ *  Copyright 2013-2050 Emmanuel BRUN (contact@amapj.fr)
+ * 
+ *  This file is part of AmapJ.
+ *  
+ *  AmapJ is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+
+ *  AmapJ is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with AmapJ.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * 
+ */
+ package fr.amapj.view.views.utilisateur;
+
+import fr.amapj.service.services.authentification.PasswordManager;
+import fr.amapj.view.engine.popup.formpopup.FormPopup;
+import fr.amapj.view.engine.popup.formpopup.genericmodel.StringItem;
+
+/**
+ * Popup pour le changement du mot de passe d'un utilisateur 
+ *  
+ */
+public class PopupSaisiePassword extends FormPopup
+{		
+	private Long idUtitilisateur;
+	
+	private StringItem password;
+	
+	public PopupSaisiePassword(Long idUtitilisateur)
+	{
+		popupTitle = "Changement du mot de passe de cet utilisateur";
+		this.idUtitilisateur = idUtitilisateur;
+		
+		password = new StringItem();
+		setModel(password);
+		
+	}
+	
+	
+	protected void addFields()
+	{
+		addPasswordTextField("Nouveau mot de passe", "value");
+	}
+
+	protected void performSauvegarder()
+	{
+		new PasswordManager().setUserPassword(idUtitilisateur,password.value);
+	}
+
+	
+	
+
+}
