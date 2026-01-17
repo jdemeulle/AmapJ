@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.permanence.role;
 
 import java.util.ArrayList;
@@ -130,7 +131,7 @@ public class PermanenceRoleService
 		List<PeriodePermanence> pps = findPermanence(p,em);
 		if (pps.size()!=0)
 		{
-			throw new UnableToSuppressException("Ce role est utilisé dans les permanences suivantes :"+CollectionUtils.asStdString(pps, e->e.nom));
+			throw new UnableToSuppressException("Ce rôle est utilisé dans les permanences suivantes :"+CollectionUtils.asStdString(pps, e->e.nom));
 		}
 				
 		// On supprime le role
