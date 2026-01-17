@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.permanence.periode.update;
 
 import java.util.ArrayList;
@@ -85,16 +86,16 @@ public class PopupDeleteUtilisateurForPeriodePermanence extends WizardFormPopup
 	private void addFieldUtilisateurs()
 	{
 		// Titre
-		setStepTitle("choix des les personnes à enlever");
+		setStepTitle("choix des personnes à enlever");
 		
-		addHtml("Veuillez cocher en face des personnes à enelever de cette periode de permanence");
+		addHtml("Veuillez cocher en face des personnes à enlever de cette periode de permanence");
 	
 		builder = new ComplexTableBuilder<PeriodePermanenceUtilisateurDTO>(dto.utilisateurs);
 		builder.setPageLength(14);
 		
 		builder.addString("Nom", false, 300, e->e.nom);
 		builder.addString("Prénom", false, 300,  e->e.prenom);
-		builder.addCheckBox("A enlever", "cb", true, 150, e->e.toSuppress, null);
+		builder.addCheckBox("À enlever", "cb", true, 150, e->e.toSuppress, null);
 				
 		addComplexTable(builder);
 		
