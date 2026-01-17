@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.access;
 
 import java.util.ArrayList;
@@ -408,7 +409,7 @@ public class AccessManagementService
 		}
 		if (isTresorier(em, u))
 		{
-			return "L'utilisateur est TRESORIER";
+			return "L'utilisateur est TRÉSORIER";
 		}
 		
 		TypedQuery<Producteur> q = em.createQuery("select r.producteur from ProducteurReferent r  WHERE r.referent=:u",Producteur.class);
@@ -416,7 +417,7 @@ public class AccessManagementService
 		List<Producteur> ps = q.getResultList();
 		if (ps.size()>=1)
 		{
-			return "L'utilisateur est marqué comme REFERENT pour le producteur "+ps.get(0).nom;
+			return "L'utilisateur est marqué comme RÉFÉRENT pour le producteur "+ps.get(0).nom;
 		}
 		
 		q = em.createQuery("select r.producteur from ProducteurUtilisateur r  WHERE r.utilisateur=:u",Producteur.class);
@@ -448,7 +449,7 @@ public class AccessManagementService
 		}
 		if (isTresorier(em, u))
 		{
-			return "L'utilisateur est TRESORIER";
+			return "L'utilisateur est TRÉSORIER";
 		}
 		
 		TypedQuery<Producteur> q = em.createQuery("select r.producteur from ProducteurReferent r  WHERE r.referent=:u AND r.producteur.etat = :etat",Producteur.class);
@@ -457,7 +458,7 @@ public class AccessManagementService
 		List<Producteur> ps = q.getResultList();
 		if (ps.size()>=1)
 		{
-			return "L'utilisateur est marqué comme REFERENT pour le producteur "+ps.get(0).nom;
+			return "L'utilisateur est marqué comme RÉFÉRENT pour le producteur "+ps.get(0).nom;
 		}
 		
 		q = em.createQuery("select r.producteur from ProducteurUtilisateur r  WHERE r.utilisateur=:u AND r.producteur.etat = :etat",Producteur.class);
@@ -490,7 +491,7 @@ public class AccessManagementService
 		}
 		if (isTresorier(em, u))
 		{
-			res.add("Cet utilisateur est TRESORIER");
+			res.add("Cet utilisateur est TRÉSORIER");
 		}
 		
 		TypedQuery<Producteur> q = em.createQuery("select r.producteur from ProducteurReferent r  WHERE r.referent=:u",Producteur.class);
@@ -498,7 +499,7 @@ public class AccessManagementService
 		for (Producteur producteur : q.getResultList()) 
 		{
 			String str = producteur.etat==EtatProducteur.ACTIF ? "" : (" (Producteur archivé)");
-			res.add("Cet utilisateur est REFERENT pour le producteur "+producteur.nom+str);
+			res.add("Cet utilisateur est RÉFÉRENT pour le producteur "+producteur.nom+str);
 		}
 		
 		
