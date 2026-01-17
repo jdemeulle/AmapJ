@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.permanence.periode.update;
 
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class PopupUpdateAllRole extends WizardFormPopup
 		String str = 	"Cet outil va vous permettre de positionner les rôles sur une période de permanence complète.<br/>"+
 						"<br/>"+
 						"Vous allez indiquer une liste de rôles, et l'outil va l'appliquer à toutes les dates de la période.<br/>"+
-						"Si il manque des roles (par exemple une date posséde 6 places et vous avez indiqué 3 rôles) , alors l'outil va utiliser 2 fois la liste initiale";
+						"Si il manque des rôles (par exemple une date posséde 6 places et vous avez indiqué 3 rôles) , alors l'outil va utiliser 2 fois la liste initiale";
 			
 								
 
@@ -88,11 +89,11 @@ public class PopupUpdateAllRole extends WizardFormPopup
 	private void drawRole1()
 	{
 		// Titre
-		setStepTitle("la saisie des roles");
+		setStepTitle("la saisie des rôles");
 
 		// Les produits
-		CollectionEditor<PeriodePermanenceRoleDTO> f1 = addCollectionEditorField("Role","roles", PeriodePermanenceRoleDTO.class);
-		f1.addSearcherColumn("idRole", "Role",FieldType.SEARCHER, null,SearcherList.PERIODE_PERMANENCE_ROLE,null);
+		CollectionEditor<PeriodePermanenceRoleDTO> f1 = addCollectionEditorField("Rôle","roles", PeriodePermanenceRoleDTO.class);
+		f1.addSearcherColumn("idRole", "Rôle",FieldType.SEARCHER, null,SearcherList.PERIODE_PERMANENCE_ROLE,null);
 		
 	}
 	
