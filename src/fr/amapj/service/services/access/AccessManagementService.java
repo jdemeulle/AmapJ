@@ -143,7 +143,7 @@ public class AccessManagementService
 			return "PRODUCTEUR";
 		}
 		
-		return "ADHÉRENT";
+		return "ADHERENT";
 	}
 	
 	
@@ -517,4 +517,5 @@ public class AccessManagementService
 	
 	
 }
+
 
