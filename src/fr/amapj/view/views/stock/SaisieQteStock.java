@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.stock;
 
 
@@ -54,13 +55,13 @@ public class SaisieQteStock
 		String msg = "La gestion des limites en quantités (stocks) n'est pas activé pour ce modèle de contrat.<br/>"
 						+ "Si vous souhaitez activer cette fonctionnalité, il faut d'abord le déclarer dans le producteur </br>"
 						+ "<ul>"
-						+ "<li>Aller dans TRESORIER / Producteur </li>"
+						+ "<li>Aller dans TRÉSORIER / Producteur </li>"
 						+ "<li>Cliquer sur Modifier </li>"
 						+ "<li>A l'étape 1, dans le champ \"Activer la gestion des limites en quantité pour ce producteur\" Mettre OUI</li>"
 						+ "</ul>"
 						+ "Ensuite, il faut le déclarer dans le modèle de contrat :</br>"
 						+ "<ul>"
-						+ "<li>Aller dans REFERENT / Gestion des contrats vierges </li>"
+						+ "<li>Aller dans RÉFÉRENT / Gestion des contrats vierges </li>"
 						+ "<li>Cliquer sur Modifier </li>"
 						+ "<li>Cliquer sur les limites en quantités </li>"
 						+ "<li>A l'étape 1, dans le champ \"Activer la gestion des limites en quantité pour ce contrat\" Mettre OUI</li>"
