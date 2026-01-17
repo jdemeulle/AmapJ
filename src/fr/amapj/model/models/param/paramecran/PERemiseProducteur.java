@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.model.models.param.paramecran;
 
 import fr.amapj.model.engine.metadata.MetaDataEnum;
@@ -47,9 +48,9 @@ public class PERemiseProducteur  extends AbstractParamEcran
 			{		
 				add("Ce champ vous permet de choisir les personnes pouvant accéder à l'écran Remise des chèques");
 
-				add(REFERENT, "Referent,Trésorier,Admin" , "Dans ce mode, cet écran est accessible aux  référents, trésoriers et admin. C'est le cas standard. Un référent ne peut accéder qu'à ses producteurs, il ne peut pas modifier les autres producteurs.");
+				add(REFERENT, "Référent, Trésorier, Admin" , "Dans ce mode, cet écran est accessible aux  référents, trésoriers et admin. C'est le cas standard. Un référent ne peut accéder qu'à ses producteurs, il ne peut pas modifier les autres producteurs.");
 				
-				add(PRODUCTEUR, "Producteur,Referent,Trésorier,Admin" , "Dans ce mode, cet écran est accessible aux producteurs , référents, trésoriers et admin. C'est un cas assez rare, où le producteur gère lui même la remise des chèques. Un producteur peut accéder uniquement aux chèques qui le concernent directement.");
+				add(PRODUCTEUR, "Producteur, Référent, Trésorier, Admin" , "Dans ce mode, cet écran est accessible aux producteurs , référents, trésoriers et admin. C'est un cas assez rare, où le producteur gère lui même la remise des chèques. Un producteur peut accéder uniquement aux chèques qui le concernent directement.");
 				
 			}
 		}	
