@@ -35,7 +35,8 @@ import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.parametres.paramecran.PEListeAdherentDTO;
 import fr.amapj.service.services.utilisateur.UtilisateurDTO;
 import fr.amapj.service.services.utilisateur.UtilisateurService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation de la liste des adhérents
@@ -231,3 +232,4 @@ public class EGListeAdherent extends AbstractExcelGenerator
 		return ExcelFormat.XLS;
 	}
 }
+
