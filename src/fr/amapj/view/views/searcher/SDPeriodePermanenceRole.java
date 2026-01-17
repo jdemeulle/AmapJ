@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.searcher;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class SDPeriodePermanenceRole implements SearcherDefinition
 	@Override
 	public String getTitle()
 	{
-		return "Roles des permanences";
+		return "Rôles des permanences";
 	}
 
 	@Override
