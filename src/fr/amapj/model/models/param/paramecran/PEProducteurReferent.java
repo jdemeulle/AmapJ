@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.model.models.param.paramecran;
 
 import java.util.List;
@@ -59,7 +60,7 @@ public class PEProducteurReferent  extends AbstractParamEcran
 			
 			public void fill()
 			{		
-				add("Ce champ vous permet de choisir le mode d'affichage pour le popup information producteur. La description d'un producteur est à renseigner dans TRESORIER / Gestion des producteurs / Modifier / Etape 1 / Description");
+				add("Ce champ vous permet de choisir le mode d'affichage pour le popup information producteur. La description d'un producteur est à renseigner dans TRÉSORIER / Gestion des producteurs / Modifier / Etape 1 / Description");
 
 				add(DESCRIPTION_PUIS_CONTACT, "Description puis Contacts" , "Affichage de la description du producteur puis des contacts.");
 				
@@ -92,7 +93,7 @@ public class PEProducteurReferent  extends AbstractParamEcran
 
 				add(ALL, "Tout le monde" , "Dans ce mode, cet écran est accessible à tous.");
 				
-				add(REFERENT, "Referent,Trésorier,Admin" , "Dans ce mode, cet écran est accessible aux référents, trésoriers et admin");
+				add(REFERENT, "Référent, Trésorier, Admin" , "Dans ce mode, cet écran est accessible aux référents, trésoriers et admin");
 				
 				add(NOBODY, "Personne" , "Cet écran est caché pour tout le monde");
 				
