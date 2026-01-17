@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.edgenerator.excel;
 
 import java.text.SimpleDateFormat;
@@ -201,7 +202,9 @@ public class EGListeAdherent extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
-		return "liste-adherents";
+		ParametresDTO param = new ParametresService().getParametres();
+
+		return "liste-adherents-"+param.nomAmap;
 	}
 	
 
