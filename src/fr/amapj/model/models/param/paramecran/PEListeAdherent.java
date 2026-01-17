@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.model.models.param.paramecran;
 
 import java.util.List;
@@ -69,11 +70,11 @@ public class PEListeAdherent  extends AbstractParamEcran
 
 				add(ALL, "Tout le monde" , "Dans ce mode, cet écran est accessible à tous.");
 				
-				add(PRODUCTEUR, "Producteur, Referent,Trésorier,Admin" , "Dans ce mode, cet écran est accessible aux producteurs , référents, trésoriers et admin");
+				add(PRODUCTEUR, "Producteur, Référent, Trésorier, Admin" , "Dans ce mode, cet écran est accessible aux producteurs , référents, trésoriers et admin");
 				
-				add(REFERENT, "Referent,Trésorier,Admin" , "Dans ce mode, cet écran est accessible aux référents, trésoriers et admin");
+				add(REFERENT, "Référent, Trésorier, Admin" , "Dans ce mode, cet écran est accessible aux référents, trésoriers et admin");
 				
-				add(TRESORIER, "Trésorier,Admin" , "Dans ce mode, cet écran est accessible aux trésoriers et admin");
+				add(TRESORIER, "Trésorier, Admin" , "Dans ce mode, cet écran est accessible aux trésoriers et admin");
 
 			}
 		}	
