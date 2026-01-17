@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.model.models.param.paramecran;
 
 import fr.amapj.model.engine.metadata.MetaDataEnum;
@@ -44,7 +45,7 @@ public enum ChoixImpressionBilanLivraison
 
 			add(TABLEUR, "Format Tableur" , "Un document tableur (format Excel XLS) sera proposé à l'utilisateur.");
 			
-			add(PDF, "Format PDF","Un document format PDF sera proposé à l'utilisateur, mais vous devrez paramétrer ce document en créant une édition spécifique (Menu Tresorier / Editions spécifiques).");
+			add(PDF, "Format PDF","Un document format PDF sera proposé à l'utilisateur, mais vous devrez paramétrer ce document en créant une édition spécifique (Menu TRÉSORIER / Editions spécifiques).");
 			
 			add(TABLEUR_ET_PDF, "Format Tableur et PDF","L'utilisateur aura accès à deux documents, un dans chaque format.");
 		}
