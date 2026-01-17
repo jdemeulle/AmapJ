@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.model.models.param.paramecran.producteur;
 
 import fr.amapj.model.engine.metadata.MetaDataEnum;
@@ -48,7 +49,7 @@ public class PELivraisonProducteur  extends AbstractParamEcran
 			{		
 				add("Ce champ vous permet de choisir les personnes pouvant accéder à l'écran Livraisons d'un producteur");
 
-				add(PRODUCTEUR, "Producteur,Referent,Trésorier,Admin" , "Dans ce mode, cet écran est accessible aux producteurs , référents, trésoriers et admin. C'est le cas standard. Un producteur ne peut accéder qu'à ses livraisons , un référent ne peut accéder qu'aux livraisons de ses producteurs.");
+				add(PRODUCTEUR, "Producteur, Référent, Trésorier, Admin" , "Dans ce mode, cet écran est accessible aux producteurs , référents, trésoriers et admin. C'est le cas standard. Un producteur ne peut accéder qu'à ses livraisons , un référent ne peut accéder qu'aux livraisons de ses producteurs.");
 				
 				add(ALL, "Tout le monde" , "Dans ce mode, cet écran est accessible à tous , sans aucune restriction, tout le monde peut accéder à tous les producteurs.");
 				
