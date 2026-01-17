@@ -39,7 +39,8 @@ import fr.amapj.service.services.gestioncontratsigne.GestionContratSigneService;
 import fr.amapj.service.services.mescontrats.ContratDTO;
 import fr.amapj.service.services.mescontrats.DatePaiementDTO;
 import fr.amapj.service.services.mescontrats.MesContratsService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation d'un bilan complet sur les chèques 
@@ -57,7 +58,8 @@ public class EGBilanCompletCheque extends AbstractExcelGenerator
 	@Override
 	public void fillExcelFile(RdbLink em,ExcelGeneratorTool et)
 	{
-		
+		ParametresDTO param = new ParametresService().getParametres();
+
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
 		SimpleDateFormat df = FormatUtils.getLiteralMonthDate();
 
@@ -76,7 +78,7 @@ public class EGBilanCompletCheque extends AbstractExcelGenerator
 		et.setColumnWidth(2, 12);
 				
 		
-		et.addRow("Bilan des chèques",et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Bilan des chèques",et.grasGaucheNonWrappe);
 		et.addRow("",et.grasGaucheNonWrappe);
 		
 		et.addRow("Nom du contrat : "+mc.nom,et.grasGaucheNonWrappe);
@@ -259,8 +261,9 @@ public class EGBilanCompletCheque extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
-		return "bilan-cheque-"+mc.nom;
+		return "bilan-cheque-"+param.nomAmap+"-"+mc.nom;
 	}
 
 
