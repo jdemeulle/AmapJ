@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.gestioncontrat.reglesaisie;
 
 import java.text.SimpleDateFormat;
@@ -169,16 +170,17 @@ public class RegleSaisieModeleContratService
 	private String computeProduit(RegleSaisie r, RdbLink em) 
 	{
 		StringBuilder sb = new StringBuilder();
-		sb.append("<ul>");
+//		sb.append("<ul>");
 		
 		
 		for (Long idProduit : r.produitIds) 
 		{
 			Produit p = em.find(Produit.class, idProduit);
-			sb.append("<li>"+s(p.nom)+", "+s(p.conditionnement)+"</li>");
+//			sb.append("<li>"+s(p.nom)+", "+s(p.conditionnement)+"</li>");
+			sb.append(" "+s(p.nom)+", "+s(p.conditionnement)+" ");
 		}
 		
-		sb.append("</ul>");
+//		sb.append("</ul>");
 		
 		return sb.toString();
 	}
