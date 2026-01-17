@@ -88,7 +88,7 @@ public class PopupDeleteUtilisateurForPeriodePermanence extends WizardFormPopup
 		// Titre
 		setStepTitle("choix des personnes à enlever");
 		
-		addHtml("Veuillez cocher en face des personnes à enlever de cette periode de permanence");
+		addHtml("Veuillez cocher en face des personnes à enlever de cette période de permanence");
 	
 		builder = new ComplexTableBuilder<PeriodePermanenceUtilisateurDTO>(dto.utilisateurs);
 		builder.setPageLength(14);
@@ -156,3 +156,4 @@ public class PopupDeleteUtilisateurForPeriodePermanence extends WizardFormPopup
 	}
 	
 }
+
