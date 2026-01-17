@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.utilisateur;
 
 import com.vaadin.data.util.BeanItem;
@@ -58,7 +59,7 @@ public class ModificationUtilisateurEditorPart extends FormPopup
 		addTextField("Nom", "nom");
 
 		// Champ 2
-		addTextField("Prenom", "prenom");
+		addTextField("Prénom", "prenom");
 
 		// Champ 3
 		addTextField("E mail", "email");
