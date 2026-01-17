@@ -34,7 +34,8 @@ import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.importdonnees.ImportDonneesService;
 import fr.amapj.service.services.importdonnees.ImportProduitProducteurDTO;
 import fr.amapj.service.services.produit.ProduitService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation du fichier d'exemple pour charger les produits et les producteurs
@@ -65,6 +66,7 @@ public class EGListeProduitProducteur extends AbstractExcelGenerator
 	@Override
 	public void fillExcelFile(RdbLink em,ExcelGeneratorTool et)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		et.addSheet("Liste des produits et des producteurs", 4, 60);
 		
 		List<ImportProduitProducteurDTO> prods;
@@ -124,13 +126,15 @@ public class EGListeProduitProducteur extends AbstractExcelGenerator
 	
 	private void contructEntete(ExcelGeneratorTool et)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		
 		// Ligne de titre
+		et.addRow(param.nomAmap,et.grasGaucheNonWrappe);
 		et.addRow("Extrait le "+df1.format(DateUtils.getDate()),et.grasGaucheNonWrappe);
 			
-		// Ligne vide
-		et.addRow();
+		// pas de ligne vide pour avoir la liste commencant en ligne 4
+//		et.addRow();
 		
 		// Ligne d'entete 
 		et.addRow();
@@ -177,14 +181,16 @@ public class EGListeProduitProducteur extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		if (idProducteur!=null)
 		{
 			Producteur p = em.find(Producteur.class, idProducteur);
-			return "liste-produits-"+p.nom;
+			return "liste-produits-"+param.nomAmap+"-"+p.nom;
 		}
 		else
 		{
-			return "liste-produits";
+			return "liste-produits-"+param.nomAmap;
 		}
 	}
 	
