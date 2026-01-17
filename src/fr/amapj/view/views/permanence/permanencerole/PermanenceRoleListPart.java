@@ -97,7 +97,7 @@ public class PermanenceRoleListPart extends StandardListPart<PermanenceRoleDTO>
 		
 		if (dto.defaultRole==true)
 		{
-			String str = "Vous ne pouvez pas supprimer ce role, car c'est le role par défaut"; 
+			String str = "Vous ne pouvez pas supprimer ce rôle, car c'est le role par défaut"; 
 			return new MessagePopup("Impossible",ColorStyle.RED,str);
 		}
 				
@@ -107,3 +107,4 @@ public class PermanenceRoleListPart extends StandardListPart<PermanenceRoleDTO>
 	}
 
 }
+
