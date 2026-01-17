@@ -205,7 +205,7 @@ public class DevToolsSelectionTable extends WizardFormPopup
 		form.addComponent(table);
 		form.addComponent(current);
 		
-		String content ="Dans ce cas, tout fonctionne bien, on peut bien sélectionner la ligne comme on veut, mais il faut avoir ajouter un listener sur chaque textfield ";
+		String content ="Dans ce cas, tout fonctionne bien, on peut bien sélectionner la ligne comme on veut, mais il faut avoir ajouté un listener sur chaque textfield ";
 		addHtml(content);
 		
 	}
@@ -389,3 +389,4 @@ public class DevToolsSelectionTable extends WizardFormPopup
 	}
 	
 }
+
