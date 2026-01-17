@@ -103,9 +103,11 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	 */
 	private void addInfoGenerale(RdbLink em, ExcelGeneratorTool et, Utilisateur u, List<Contrat> cs) 
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		et.addSheet("Généralités", 2, 70);
 		
-		et.addRow("Informations générales pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Informations générales pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
 		et.addRow();
 		
 		addLine(et,"Nom",u.nom);
@@ -153,11 +155,12 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	 */
 	private void addInfoCotisations(RdbLink em, ExcelGeneratorTool et, Utilisateur u) 
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		List<PeriodeCotisationUtilisateurDTO> ps = new GestionCotisationService().getPeriodeCotisation(u.id);
 		
 		et.addSheet("Cotisations", 8, 20);
 		
-		et.addRow("Liste des cotisations pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Liste des cotisations pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
 		et.addRow();
 		
 		if (ps.size()==0)
@@ -198,6 +201,8 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 
 	private void addListeContrats(RdbLink em, Utilisateur u, ExcelGeneratorTool et, List<Contrat> cs) 
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		et.addSheet("Liste des contrats", 7, 50);
 		et.setColumnWidth(0, 15);
 		et.setColumnWidth(1, 25);
@@ -206,7 +211,7 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 		et.setColumnWidth(6, 15);
 		
 		
-		et.addRow("Liste des contrats pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Liste des contrats pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
 		
 		et.addRow();
 		
@@ -258,14 +263,15 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	
 	private void addInfoPermanence(RdbLink em, ExcelGeneratorTool et, Utilisateur u) 
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		SimpleDateFormat df = FormatUtils.getStdDate();
 		List<PeriodePermanenceDTO> ps = new PeriodePermanenceService().getAllPermanenceDTO(u.id);
 		CollectionUtils.sort(ps, e->e.dateDebut);
 		
 		et.addSheet("Permanences", 2, 70);
 		
-		
-		et.addRow("Liste des permanences pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Liste des permanences pour l'utilisateur "+u.nom+" "+u.prenom,et.grasGaucheNonWrappe);
 		
 		et.addRow();
 		
@@ -330,5 +336,6 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	}
 
 }
+
 
 
