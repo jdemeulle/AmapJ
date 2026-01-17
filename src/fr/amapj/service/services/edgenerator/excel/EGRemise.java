@@ -67,7 +67,7 @@ public class EGRemise extends AbstractExcelGenerator
 		// Calcul du nombre de colonnes :  Nom + prénom + 1 montant du chéque + commentaire 1 + commentaire 2 +commentaire 3 + commentaire 4
 		et.addSheet(dto.moisRemise, 7, 20);
 				
-		et.addRow(param.nomAmap+" - "Remise de chèques du "+dto.moisRemise,et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Remise de chèques du "+dto.moisRemise,et.grasGaucheNonWrappe);
 		et.addRow("",et.grasGaucheNonWrappe);
 		
 		et.addRow("Nom du contrat : "+mc.nom,et.grasGaucheNonWrappe);
