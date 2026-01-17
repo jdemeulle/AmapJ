@@ -264,7 +264,6 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	private void addInfoPermanence(RdbLink em, ExcelGeneratorTool et, Utilisateur u) 
 	{
 		ParametresDTO param = new ParametresService().getParametres();
-
 		SimpleDateFormat df = FormatUtils.getStdDate();
 		List<PeriodePermanenceDTO> ps = new PeriodePermanenceService().getAllPermanenceDTO(u.id);
 		CollectionUtils.sort(ps, e->e.dateDebut);
@@ -336,6 +335,7 @@ public class EGBilanCompletAmapien extends AbstractExcelGenerator
 	}
 
 }
+
 
 
 
