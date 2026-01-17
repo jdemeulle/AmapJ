@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.engine.menu;
 
 import java.util.ArrayList;
@@ -185,7 +186,7 @@ public class MenuInfo
 		// Partie référents
 		if (hasRole(RoleList.REFERENT))
 		{
-			addCategorie("REFERENT");
+			addCategorie("RÉFÉRENT");
 			addMenu(MenuList.GESTION_CONTRAT, GestionContratListPart.class);
 			addMenu(MenuList.GESTION_CONTRAT_SIGNES,  GestionContratSignesListPart.class );
 			addMenu(MenuList.RECEPTION_CHEQUES, ReceptionChequeListPart.class);
@@ -208,7 +209,7 @@ public class MenuInfo
 		// Partie trésorier
 		if (hasRole(RoleList.TRESORIER))
 		{
-			addCategorie("TRESORIER");
+			addCategorie("TRÉSORIER");
 			addMenu(MenuList.UTILISATEUR, UtilisateurListPart.class);
 			addMenu(MenuList.PRODUCTEUR, ProducteurListPart.class);
 			addMenu(MenuList.BILAN_COTISATION, BilanCotisationView.class,ModuleList.GESTION_COTISATION);
