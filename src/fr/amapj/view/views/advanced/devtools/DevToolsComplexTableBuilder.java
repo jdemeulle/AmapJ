@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.advanced.devtools;
 
 import java.util.Arrays;
@@ -177,7 +178,7 @@ public class DevToolsComplexTableBuilder extends WizardFormPopup
 		form.addComponent(table);
 		form.addComponent(current);
 		
-		String content ="Dans ce cas, tout fonctionne bien, on peut bien selectionner la ligne comme on veut, mais il faut avoir ajouter un listener sur chaque textfield ";
+		String content ="Dans ce cas, tout fonctionne bien, on peut bien sélectionner la ligne comme on veut, mais il faut avoir ajouté un listener sur chaque textfield ";
 		addHtml(content);
 		
 	}
@@ -262,7 +263,7 @@ public class DevToolsComplexTableBuilder extends WizardFormPopup
 		form.addComponent(table);
 		form.addComponent(current);
 		
-		String content ="Dans ce cas, impossible de le faire fonctionner. On n'arrive pas à selctionner les lignes. Le seul moyen est de cliquer juste au milieu entre les 2 colonnes, mais pas pratique du tout  ";
+		String content ="Dans ce cas, impossible de le faire fonctionner. On n'arrive pas à sélectionner les lignes. Le seul moyen est de cliquer juste au milieu entre les 2 colonnes, mais pas pratique du tout  ";
 		addHtml(content);
 		
 	}
