@@ -91,7 +91,7 @@ public class InscriptionPopup extends OKCancelPopup
 		
 		if (roleIds.size()==0)
 		{
-			Label l = new Label("Impossible de vous inscrire - plus de roles.");
+			Label l = new Label("Impossible de vous inscrire - plus de rôles.");
 			contentLayout.addComponent(l);
 			hasSaveButton = false;
 			return;
@@ -178,3 +178,4 @@ public class InscriptionPopup extends OKCancelPopup
 	}
 	
 }
+
