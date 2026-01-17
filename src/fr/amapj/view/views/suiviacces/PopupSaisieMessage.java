@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.view.views.suiviacces;
 
 import fr.amapj.service.services.session.SessionManager;
@@ -43,7 +44,7 @@ public class PopupSaisieMessage extends FormPopup
 		saveButtonTitle = "Envoyer";
 		
 		dto = new StringItem();
-		dto.value = "ATTENTION - ARRET DU SERVEUR DANS UNE MINUTE";
+		dto.value = "ATTENTION - ARRÊT DU SERVEUR DANS UNE MINUTE";
 		setModel(dto);
 	}
 	
