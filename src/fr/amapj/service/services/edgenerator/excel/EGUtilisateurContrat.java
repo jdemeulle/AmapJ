@@ -32,7 +32,8 @@ import fr.amapj.service.engine.generator.excel.AbstractExcelGenerator;
 import fr.amapj.service.engine.generator.excel.ExcelFormat;
 import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.gestioncontratsigne.GestionContratSigneService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Listes des utilisateurs d'un contrat
@@ -80,11 +81,11 @@ public class EGUtilisateurContrat extends AbstractExcelGenerator
 	
 	private void contructEntete(ExcelGeneratorTool et, ModeleContrat mc)
 	{
-		
+		ParametresDTO param = new ParametresService().getParametres();
 		SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		
 		// Ligne de titre
-		et.addRow("Liste des souscripteurs du contrat "+mc.nom,et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Liste des souscripteurs du contrat "+mc.nom,et.grasGaucheNonWrappe);
 		et.addRow("Extrait le "+df1.format(DateUtils.getDate()),et.grasGaucheNonWrappe);
 			
 		// Ligne vide
@@ -127,8 +128,9 @@ public class EGUtilisateurContrat extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		ModeleContrat mc = em.find(ModeleContrat.class,idModeleContrat);
-		return "liste-souscripteurs-"+mc.nom;
+		return "liste-souscripteurs-"+param.nomAmap+"-"+mc.nom;
 	}
 	
 
