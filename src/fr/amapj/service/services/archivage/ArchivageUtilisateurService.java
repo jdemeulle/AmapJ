@@ -18,6 +18,7 @@
  * 
  * 
  */
+
  package fr.amapj.service.services.archivage;
 
 import java.text.SimpleDateFormat;
@@ -64,8 +65,8 @@ public class ArchivageUtilisateurService
 				"<li>tous les paiements ont été finalisés</li>"+
 			 	"<li>la date de dernière livraison est plus vieille que "+param.archivageUtilisateur+" jours</li>"+
 			 	"<li>la date de fin de sa dernière adhésion est plus vieille que "+param.archivageUtilisateur+" jours</li>"+
-				"<li>cet utilisateur n'a pas le role de PRODUCTEUR ou REFERENT (sur un producteur actif)</li>"+
-				"<li>cet utilisateur n'a pas le role de TRESORIER ou ADMIN</li>"+
+				"<li>cet utilisateur n'a pas le role de PRODUCTEUR ou RÉFÉRENT (sur un producteur actif)</li>"+
+				"<li>cet utilisateur n'a pas le role de TRÉSORIER ou ADMIN</li>"+
 				"<li>cet utilisateur n'est pas inscrit sur une permanence dans le futur</li>"+
 			 	"<li>la date de création de cet utilisateur est plus vieille que 60 jours</li>"+
 			 	"</ul><br/>";
@@ -199,7 +200,7 @@ public class ArchivageUtilisateurService
 		String str = "Il est souhaitable de supprimer un utilisateur archivé qui remplit les conditions suivantes : <ul>"+
 				 	"<li>tous les contrats de cet utilisateur ont été supprimés</li>"+
 				 	"<li>cet utilisateur n'est pas inscrit sur une période de cotisation</li>"+
-				 	"<li>cet utilisateur n'a pas le role de PRODUCTEUR ou REFERENT ou TRESORIER ou ADMIN</li>"+
+				 	"<li>cet utilisateur n'a pas le role de PRODUCTEUR ou RÉFÉRENT ou TRÉSORIER ou ADMIN</li>"+
 				 	"<li>cet utilisateur n'est pas inscrit sur une permanence dans le futur</li>"+
 				 	"<li>la date de création de cet utilisateur est plus vieille que 90 jours</li></ul><br/>"+
 				 	"</ul><br/>";
