@@ -69,6 +69,7 @@ public class EGPlanningPermanence extends AbstractExcelGenerator
 
 	private void addSheet(ExcelGeneratorTool et, boolean withRole) 
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		PeriodePermanenceDTO dto = new PeriodePermanenceService().loadPeriodePermanenceDTO(idPeriodePermanence);
 		SimpleDateFormat df = new SimpleDateFormat("EEEEE dd MMMMM yyyy");
 
@@ -90,6 +91,7 @@ public class EGPlanningPermanence extends AbstractExcelGenerator
 		}
 	
 				
+		et.addRow(param.nomAmap,et.grasGaucheNonWrappe);
 		et.addRow("Planning des permanences",et.grasGaucheNonWrappe);
 		et.addRow(dto.nom,et.grasGaucheNonWrappe);
 		et.addRow("",et.grasGaucheNonWrappe);
