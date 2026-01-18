@@ -34,7 +34,8 @@ import fr.amapj.service.services.gestioncotisation.BilanAdhesionDTO;
 import fr.amapj.service.services.gestioncotisation.GestionCotisationService;
 import fr.amapj.service.services.gestioncotisation.PeriodeCotisationUtilisateurDTO;
 import fr.amapj.service.services.utilisateur.util.UtilisateurUtil;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation du bilan des adhésions pour une année
@@ -57,12 +58,14 @@ public class EGBilanAdhesion extends AbstractExcelGenerator
 	@Override
 	public void fillExcelFile(RdbLink em,ExcelGeneratorTool et)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		BilanAdhesionDTO bilan = new GestionCotisationService().loadBilanAdhesion(periodeCotisationId);
 		
 		// Calcul du nombre de colonnes :  Nom + prénom + montant du chéque + état du paiement + type du paiement + date de réception + e mail 
 		et.addSheet("Adhésion", 7, 20);
 		et.setColumnWidth(6, 40);
 				
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow("Bilan des adhésions pour la période de "+bilan.periodeCotisationDTO.nom,et.grasGaucheNonWrappe);
 		et.addRow("",et.grasGaucheNonWrappe);
 		
@@ -143,8 +146,9 @@ public class EGBilanAdhesion extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		PeriodeCotisation pc = em.find(PeriodeCotisation.class, periodeCotisationId);
-		return "bilan-adhésion-"+pc.nom;
+		return "bilan-adhésion-"+param.nomAmap+"-"+pc.nom;
 	}
 
 	@Override
