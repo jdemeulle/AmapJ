@@ -66,6 +66,8 @@ public class EGProducteurMntLivre extends AbstractExcelGenerator
 
 	private void fillTab(RdbLink em, ExcelGeneratorTool et, Periode periode)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		String nomPeriode = periode.getLib();
 		
 		// On recherche touutes les livraisons concernées
@@ -104,6 +106,7 @@ public class EGProducteurMntLivre extends AbstractExcelGenerator
 
 		
 		// Ecriture de la ligne de titre avec le nom des producteurs 
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow();
 		et.setRowHeigth(2);
 		et.setCell(0, "", et.grasCentreBordureGray);
