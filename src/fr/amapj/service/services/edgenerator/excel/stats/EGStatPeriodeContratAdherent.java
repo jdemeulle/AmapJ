@@ -78,6 +78,8 @@ public class EGStatPeriodeContratAdherent extends AbstractExcelGenerator
 	
 	private void fillTab(RdbLink em, ExcelGeneratorTool et, PeriodeCotisationDTO periode)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		String nomPeriode = periode==null ? "CONTRATS SANS PÉRIODE DE COTISATION" : periode.nom;
 		Long idPeriode = periode==null ? null : periode.id;
 		
@@ -117,9 +119,11 @@ public class EGStatPeriodeContratAdherent extends AbstractExcelGenerator
 
 		
 		// Ecriture de la ligne de titre
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow();
 		et.setRowHeigth(2);
-		et.createFreezePane(1, 1);
+//		et.createFreezePane(1, 1);
+		et.createFreezePane(1, 2);
 		
 		et.setCell(0, "Nom du contrat", et.grasCentreBordureGray);
 		et.setCell(1, "Total", et.grasCentreBordureGray);
