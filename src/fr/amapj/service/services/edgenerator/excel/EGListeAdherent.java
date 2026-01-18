@@ -122,9 +122,11 @@ public class EGListeAdherent extends AbstractExcelGenerator
 	
 	private void contructEntete(ExcelGeneratorTool et)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		
 		// Ligne de titre
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow("Extrait le "+df1.format(DateUtils.getDate()),et.grasGaucheNonWrappe);
 			
 		// Ligne vide
