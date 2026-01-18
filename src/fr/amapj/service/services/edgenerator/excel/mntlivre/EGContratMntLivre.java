@@ -66,9 +66,11 @@ public class EGContratMntLivre extends AbstractExcelGenerator
 
 	private void fillTab(RdbLink em, ExcelGeneratorTool et, Periode periode)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		String nomPeriode = periode.getLib();
 		
-		// On recherche touutes les livraisons concernées
+		// On recherche toutes les livraisons concernées
 		List<ContratCell> cs = tools.getContratCell(em, periode);
 		
 		// On réalise une projection 2D de ces livraisons
@@ -105,6 +107,7 @@ public class EGContratMntLivre extends AbstractExcelGenerator
 
 		
 		// Ecriture de la ligne de titre avec le nom des producteurs 
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow();
 		et.setCell(0, "", et.grasCentreBordureGray);
 		et.setCell(1, "", et.grasCentreBordureGray);
@@ -127,7 +130,8 @@ public class EGContratMntLivre extends AbstractExcelGenerator
 			index++;
 		}
 
-		et.createFreezePane(1, 2);
+//		et.createFreezePane(1, 2);
+		et.createFreezePane(1, 3);
 		
 		tools.addAllLines(ligs, nbCol, em, et, c1);
 		
