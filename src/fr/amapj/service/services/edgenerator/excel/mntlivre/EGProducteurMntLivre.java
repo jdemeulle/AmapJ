@@ -118,7 +118,8 @@ public class EGProducteurMntLivre extends AbstractExcelGenerator
 			index++;
 		}
 
-		et.createFreezePane(1, 1);
+//		et.createFreezePane(1, 1);
+		et.createFreezePane(1, 2);
 		
 		tools.addAllLines(ligs, nbCol, em, et, c1);
 		
