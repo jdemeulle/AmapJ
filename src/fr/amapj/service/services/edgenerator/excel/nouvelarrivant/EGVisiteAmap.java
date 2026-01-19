@@ -74,6 +74,8 @@ public class EGVisiteAmap extends AbstractExcelGenerator
 	@Override
 	public void fillExcelFile(RdbLink em,ExcelGeneratorTool et)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		// Récupération de toutes les dates de livraison 
 		TypedQuery<Date> q = em.createQuery("select distinct(mcd.dateLiv) from ModeleContratDate mcd where mcd.modeleContrat.etat =:etat order by mcd.dateLiv",Date.class);
 		q.setParameter("etat", EtatModeleContrat.ACTIF);
@@ -82,6 +84,7 @@ public class EGVisiteAmap extends AbstractExcelGenerator
 		if (dateLivs.size()==0)
 		{
 			et.addSheet("Découverte / Visite", 1, 50);
+			et.addRow(param.nomAmap,et.titre);
 			et.addRow("Aucune livraison pour aucune date",et.grasGaucheNonWrappe);
 			return;
 		}
@@ -100,6 +103,7 @@ public class EGVisiteAmap extends AbstractExcelGenerator
 		if (dto.jours.size()==0)
 		{				
 			et.addSheet("Découverte / Visite", 1, 50);
+			et.addRow(param.nomAmap,et.titre);
 			et.addRow("Aucune livraison pour aucune date",et.grasGaucheNonWrappe);
 			return;
 		}
@@ -115,9 +119,12 @@ public class EGVisiteAmap extends AbstractExcelGenerator
 
 	private void addOnePage(Jour jour, ExcelGeneratorTool et) 
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		et.addSheet(df.format(jour.dateLiv), 1, 200);
 		
 		// La date 
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow(df1.format(jour.dateLiv),et.grasGaucheNonWrappe);
 		et.addRow();
 		

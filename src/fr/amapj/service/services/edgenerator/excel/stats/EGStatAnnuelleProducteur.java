@@ -52,7 +52,7 @@ public class EGStatAnnuelleProducteur extends AbstractExcelGenerator
 	@Override
 	public void fillExcelFile(RdbLink em,ExcelGeneratorTool et)
 	{
-		
+		ParametresDTO param = new ParametresService().getParametres();
 		
 		List<Integer> annees = getAllAnnees(em);
 		List<Producteur> producteurs = getAllProducteurs(em); 
@@ -62,6 +62,7 @@ public class EGStatAnnuelleProducteur extends AbstractExcelGenerator
 		et.addSheet("Statistiques producteur", 1+annees.size(), 20);
 		et.setColumnWidth(0, 40);
 		
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow("Statistiques producteur par année",et.titre);
 		et.addRow();
 		

@@ -35,7 +35,8 @@ import fr.amapj.service.services.remiseproducteur.PaiementRemiseDTO;
 import fr.amapj.service.services.remiseproducteur.RemiseDTO;
 import fr.amapj.service.services.remiseproducteur.RemiseProducteurService;
 import fr.amapj.view.engine.menu.MenuList;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation de la feuille d'une remise
@@ -56,6 +57,7 @@ public class EGRemise extends AbstractExcelGenerator
 	@Override
 	public void fillExcelFile(RdbLink em,ExcelGeneratorTool et)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		RemiseProducteur remise = em.find(RemiseProducteur.class, remiseId);
 		ModeleContrat mc = remise.datePaiement.modeleContrat;
 		RemiseDTO dto = new RemiseProducteurService().loadRemise(remiseId);
@@ -65,7 +67,7 @@ public class EGRemise extends AbstractExcelGenerator
 		// Calcul du nombre de colonnes :  Nom + prénom + 1 montant du chéque + commentaire 1 + commentaire 2 +commentaire 3 + commentaire 4
 		et.addSheet(dto.moisRemise, 7, 20);
 				
-		et.addRow("Remise de chèques du "+dto.moisRemise,et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Remise de chèques du "+dto.moisRemise,et.grasGaucheNonWrappe);
 		et.addRow("",et.grasGaucheNonWrappe);
 		
 		et.addRow("Nom du contrat : "+mc.nom,et.grasGaucheNonWrappe);
@@ -156,9 +158,10 @@ public class EGRemise extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		RemiseProducteur remise = em.find(RemiseProducteur.class, remiseId);
 		ModeleContrat mc = remise.datePaiement.modeleContrat;
-		return "remise-"+mc.nom;
+		return "remise-"+param.nomAmap+"-"+mc.nom;
 	}
 
 	@Override

@@ -37,7 +37,8 @@ import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.mescontrats.MesContratsService;
 import fr.amapj.service.services.mespaiements.DetailPaiementAFournirDTO;
 import fr.amapj.service.services.mespaiements.MesPaiementsService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation des feuilles de collecte de cheques
@@ -58,14 +59,16 @@ public class EGCollecteCheque extends AbstractExcelGenerator
 	@Override
 	public void fillExcelFile(RdbLink em,ExcelGeneratorTool et)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		et.addSheet("Amap", 1, 100);
-		
 		
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
 		SimpleDateFormat df = new SimpleDateFormat("EEEEE dd MMMMM yyyy");
 		
 		
 		et.addRow("Bordereau de collecte des chèques",et.titre);
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow("",et.grasGaucheNonWrappe);
 		
 		et.addRow("Nom du contrat : "+mc.nom,et.grasGaucheNonWrappe);
@@ -117,8 +120,9 @@ public class EGCollecteCheque extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
-		return "collecte-cheque-"+mc.nom;
+		return "collecte-cheque-"+param.nomAmap+"-"+mc.nom;
 	}
 	
 

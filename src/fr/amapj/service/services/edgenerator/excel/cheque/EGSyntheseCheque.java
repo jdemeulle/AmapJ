@@ -327,26 +327,26 @@ public class EGSyntheseCheque extends AbstractExcelGenerator
 		switch (mode)
 		{
 		case CHEQUE_A_REMETTRE:
-			etat ="promis";
+			etat ="promis-";
 			break;
 
 		case CHEQUE_AMAP:
-			etat ="recus";
+			etat ="recus-";
 			break;
 			
 		case CHEQUE_REMIS_PRODUCTEUR:
-			etat ="remis";
+			etat ="remis-";
 			break;
 			
 		case TOUS:
-			etat ="promis-recus-remis";
+			etat ="promis-recus-remis-";
 			break;
 			
 		default:
 			throw new AmapjRuntimeException();
 		}
 		
-		return "synthese-cheque-"+param.nomAmap+"-"+etat+"-"+nomUtilisateur;
+		return "synthese-cheque-"+etat+param.nomAmap+"-"+nomUtilisateur;
 	}
 	
 

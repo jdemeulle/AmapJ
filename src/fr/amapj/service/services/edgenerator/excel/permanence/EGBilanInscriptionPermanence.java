@@ -91,6 +91,8 @@ public class EGBilanInscriptionPermanence extends AbstractExcelGenerator
 
 	private void addSheet(List<UtilisateurInfo> oks, ExcelGeneratorTool et, PeriodePermanenceDTO dto, String nomFeuille, String titre, boolean displayMail)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");	
 		
 		et.addSheet(nomFeuille, 6, 20);
@@ -100,6 +102,7 @@ public class EGBilanInscriptionPermanence extends AbstractExcelGenerator
 		et.setColumnWidth(5, 10);
 		
 		// Ligne de titre
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow("Période de permanence "+dto.nom,et.grasGaucheNonWrappe);
 		et.addRow(titre,et.grasGaucheNonWrappe);
 		et.addRow("Extrait le "+df1.format(DateUtils.getDate()),et.grasGaucheNonWrappe);

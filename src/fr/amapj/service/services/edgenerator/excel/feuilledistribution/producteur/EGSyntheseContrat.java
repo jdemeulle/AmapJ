@@ -35,7 +35,8 @@ import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.gestioncontrat.GestionContratService;
 import fr.amapj.service.services.mescontrats.ContratDTO;
 import fr.amapj.service.services.mescontrats.MesContratsService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la gestion des modeles de contrat
@@ -58,6 +59,7 @@ public class EGSyntheseContrat  extends AbstractExcelGenerator
 	{	
 		EGGrilleTool grilleTool = new EGGrilleTool();
 		
+		ParametresDTO param = new ParametresService().getParametres();
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
 		
 		// Avec une sous requete, on récupere la liste des produits
@@ -75,7 +77,7 @@ public class EGSyntheseContrat  extends AbstractExcelGenerator
 		// Nombre de colonnes fixe à gauche
 		int nbColGauche = 3;
 
-		grilleTool.performSheet(et,"SYNTHESE DU CONTRAT","Amap",mc,prods,dates,utilisateurs,nbColGauche,contrats);
+		grilleTool.performSheet(et,param.nomAmap+" - SYNTHESE DU CONTRAT","Amap",mc,prods,dates,utilisateurs,nbColGauche,contrats);
 	}
 	
 	
@@ -83,8 +85,9 @@ public class EGSyntheseContrat  extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		ModeleContrat mc = em.find(ModeleContrat.class, modeleContratId);
-		return "synthese-"+mc.nom;
+		return "synthese-"+param.nomAmap+"-"+mc.nom;
 	}
 
 

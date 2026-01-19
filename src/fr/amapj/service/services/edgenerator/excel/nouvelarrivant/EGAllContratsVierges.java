@@ -93,6 +93,8 @@ public class EGAllContratsVierges extends AbstractExcelGenerator
 
 	private void addListeModeleContrats(RdbLink em, ExcelGeneratorTool et, List<ModeleContrat> mcs) 
 	{
+		ParametresDTO param = new ParametresService().getParametres();
+
 		et.addSheet("Liste", 5, 50);
 		et.setColumnWidth(0, 15);
 		et.setColumnWidth(1, 60);
@@ -110,6 +112,7 @@ public class EGAllContratsVierges extends AbstractExcelGenerator
 		}
 		
 		
+		et.addRow(param.nomAmap,et.titre);
 		et.addRow(str,et.grasGaucheNonWrappe);
 		
 		et.addRow();

@@ -91,12 +91,12 @@ public class EGPaiementProducteur extends AbstractExcelGenerator
 	
 	private void createPageGarde(RdbLink em, ExcelGeneratorTool et, List<RemiseDTO> remises, List<RemiseDTO> nextRemises, int mntAvoir, ModeleContrat mc)
 	{
-		
+		ParametresDTO param = new ParametresService().getParametres();
 		
 		// Calcul du nombre de colonnes :  Mois + date + montant + nb de chéques + état
 		et.addSheet("Bilan paiement", 5, 18);
 				
-		et.addRow("Bilan des paiements",et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Bilan des paiements",et.grasGaucheNonWrappe);
 		et.addRow("",et.grasGaucheNonWrappe);
 		
 		et.addRow("Nom du contrat : "+mc.nom,et.grasGaucheNonWrappe);

@@ -30,7 +30,8 @@ import fr.amapj.service.engine.generator.excel.ExcelFormat;
 import fr.amapj.service.engine.generator.excel.ExcelGeneratorTool;
 import fr.amapj.service.services.gestioncontratsigne.ContratSigneDTO;
 import fr.amapj.service.services.gestioncontratsigne.GestionContratSigneService;
-
+import fr.amapj.service.services.parametres.ParametresDTO;
+import fr.amapj.service.services.parametres.ParametresService;
 
 /**
  * Permet la generation du bilan des avoirs initiaux d'un contrat
@@ -51,6 +52,7 @@ public class EGAvoirs extends AbstractExcelGenerator
 	@Override
 	public void fillExcelFile(RdbLink em,ExcelGeneratorTool et)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		List<ContratSigneDTO> avoirs = new GestionContratSigneService().getAvoirsInfo(em,modeleContratId);
 		ModeleContrat mc = em.find(ModeleContrat.class,modeleContratId);
 
@@ -58,7 +60,7 @@ public class EGAvoirs extends AbstractExcelGenerator
 		// Calcul du nombre de colonnes :  Nom + prénom + 1 montant de l'avoir
 		et.addSheet("Avoirs", 3, 20);
 				
-		et.addRow("Liste des avoirs initiaux",et.grasGaucheNonWrappe);
+		et.addRow(param.nomAmap+" - Liste des avoirs initiaux",et.grasGaucheNonWrappe);
 		et.addRow("",et.grasGaucheNonWrappe);
 		
 		et.addRow("Nom du contrat : "+mc.nom,et.grasGaucheNonWrappe);
@@ -113,8 +115,9 @@ public class EGAvoirs extends AbstractExcelGenerator
 	@Override
 	public String getFileName(RdbLink em)
 	{
+		ParametresDTO param = new ParametresService().getParametres();
 		ModeleContrat mc = em.find(ModeleContrat.class,modeleContratId);
-		return "avoirs-"+mc.nom;
+		return "avoirs-"+param.nomAmap+"-"+mc.nom;
 	}
 
 	@Override
