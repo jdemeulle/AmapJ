@@ -121,7 +121,7 @@ public class AccessManagementService
 		
 		if (isTresorier(em,u))
 		{
-			return "TRESORIER";
+			return "TRÉSORIER";
 		}
 		
 		boolean ref = isReferent(em,u);
@@ -129,12 +129,12 @@ public class AccessManagementService
 		
 		if (ref && prod)
 		{
-			return "REFERENT et PRODUCTEUR";
+			return "RÉFÉRENT et PRODUCTEUR";
 		}
 		
 		if (ref)
 		{
-			return "REFERENT";
+			return "RÉFÉRENT";
 		}
 		
 		if (prod)
@@ -142,7 +142,7 @@ public class AccessManagementService
 			return "PRODUCTEUR";
 		}
 		
-		return "ADHERENT";
+		return "ADHÉRENT";
 	}
 	
 	
